@@ -1,0 +1,4 @@
+Persistência Log: , Alterado para LogTxtDAO ,28/05/2017 13:38:46
+Insersão: ,Wagner Andrade foi cadastrado!,28/05/2017 13:39:13
+Visualização: ,Wagner Andrade foi visualizado! ,28/05/2017 13:39:23
+Visualização: ,Wagner Andrade foi visualizado! ,28/05/2017 13:40:16
