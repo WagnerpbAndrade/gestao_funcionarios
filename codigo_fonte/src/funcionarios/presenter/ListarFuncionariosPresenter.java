@@ -68,15 +68,15 @@ public final class ListarFuncionariosPresenter implements Observador {
         this.view.getCbOrdenarTelefone().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+
                 try {
-                    
+
                     ordenaTelefone();
-                    
+
                 } catch (Exception ex) {
                     Logger.getLogger(ListarFuncionariosPresenter.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                
+
             }
         });
 
@@ -117,6 +117,20 @@ public final class ListarFuncionariosPresenter implements Observador {
                 }
             }
 
+        });
+
+        this.view.getjButtonRemover().addActionListener((e) -> {
+            try {
+
+                btnRemover();
+
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "<html><body>"
+                        + "<h3>"
+                        + "<font face='Arial'>" + ex.getMessage() + "</font>"
+                        + "</h3>"
+                        + "</body></html>", "MENSAGEM", 1);
+            }
         });
 
         this.view.setResizable(false);
@@ -162,16 +176,36 @@ public final class ListarFuncionariosPresenter implements Observador {
             String nomeFuncionario = (String) tabela.getValueAt(linhaSelecionada, 0);
 
             Funcionario f = this.funcionarios.getFuncionarioByNome(nomeFuncionario);
-            System.out.println("fid: " + f.getId());
+
             this.funcionarios.setFuncionarioSelecionado(f);
 
             presenter = new IncluirFuncionarioPresenter();
             presenter.setState(new EdicaoFuncionarioState(presenter));
             presenter.edicao();
 
-
         } else {
             throw new Exception("Selecione um funcionário para editar!");
+        }
+    }
+
+    private void btnRemover() throws Exception {
+        JTable tabela = this.view.getJtPessoas();
+
+        if (tabela.getSelectedRow() != -1) {
+
+            String mensagem = "Deseja excluir esse funcionário?";
+            if (JOptionPane.showConfirmDialog(this.view, "<html><body><h3><font face='Arial'>" + mensagem + "</font></h3></body></html>", "Selecionar a Opção", 0) == 0) {
+                int linhaSelecionada = tabela.getSelectedRow();
+                String nomeFuncionario = (String) tabela.getValueAt(linhaSelecionada, 0);
+
+                Funcionario f = this.funcionarios.getFuncionarioByNome(nomeFuncionario);
+
+                this.funcionarios.removerFuncionario(this.dao.getAll(), f);
+
+            }
+
+        } else {
+            throw new Exception("Selecione um funcionário para remover!");
         }
     }
 
@@ -192,7 +226,6 @@ public final class ListarFuncionariosPresenter implements Observador {
                 }
             };
 
-            
             carregaFuncionarios(this.dao.getAll());
 
             view.getJtPessoas().setModel(tm);
@@ -222,9 +255,9 @@ public final class ListarFuncionariosPresenter implements Observador {
     @Override
     public void update() {
         try {
-            
+
             carregaFuncionarios(this.dao.getAll());
-            
+
         } catch (Exception ex) {
             Logger.getLogger(ListarFuncionariosPresenter.class.getName()).log(Level.SEVERE, null, ex);
         }

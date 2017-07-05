@@ -140,4 +140,12 @@ public class MySQLDAO extends AbstractMySQL implements IFuncionarioDAO {
         }
     }
 
+    @Override
+    public void removerFuncionario(Collection<Funcionario> c, Funcionario funcionario) throws Exception {
+        
+        String sql = "DELETE FROM funcionario WHERE idFuncionario = '" + funcionario.getId() + "'";
+        
+        updateDB(sql);
+    }
+
 }

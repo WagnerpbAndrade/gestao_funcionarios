@@ -95,4 +95,9 @@ public class TxtDAO implements IFuncionarioDAO {
         return arrayBonus;
     }
 
+    @Override
+    public void removerFuncionario(Collection<Funcionario> c, Funcionario funcionario) throws Exception {
+        
+    }
+
 }

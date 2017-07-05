@@ -16,6 +16,6 @@ public interface IFuncionarioDAO {
     
     public void editarFuncionario(Collection<Funcionario> c, Funcionario funcionario) throws Exception;
     
-    //public void removerFuncionario(Collection<Funcionario> c, Funcionario funcionario) throws Exception;
+    public void removerFuncionario(Collection<Funcionario> c, Funcionario funcionario) throws Exception;
     
 }

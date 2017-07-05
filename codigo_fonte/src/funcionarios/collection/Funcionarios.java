@@ -57,6 +57,12 @@ public final class Funcionarios implements Observado {
         notificar();
 
     }
+    
+    public void removerFuncionario(Collection<Funcionario> c, Funcionario f) throws Exception{
+        this.dao.removerFuncionario(c, f);
+        
+        notificar();
+    }
 
     public TreeSet<Funcionario> getTreeSet() throws Exception {
         return funcionarios;
