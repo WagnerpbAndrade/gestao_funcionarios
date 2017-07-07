@@ -23,7 +23,6 @@ import javax.swing.JOptionPane;
 import observer.Observador;
 import dao.IFuncionarioDAO;
 import java.awt.Frame;
-import java.awt.Window;
 
 /**
  *
@@ -90,6 +89,12 @@ public class PrincipalPresenter implements Observador {
 
             miListarFuncionario();
 
+        });
+        
+        this.view.getjMenuItemGraficoBarras().addActionListener((e) -> {
+            
+            miGraficoBarras();
+            
         });
 
         this.view.getjMenuItemSair().addActionListener(new ActionListener() {
@@ -196,7 +201,11 @@ public class PrincipalPresenter implements Observador {
         this.view.setLocationRelativeTo(null);
         this.view.setVisible(true);
     }
-
+    
+    private void miGraficoBarras(){
+        this.view.getjDesktopPanePrincipalView().add(new GraficoPresenter().getView());
+    }
+    
     private void fecharTelaPrincipal() throws Exception {
 
         this.logDAO.salvarLog(Logs.getInstance().getLogs());

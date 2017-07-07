@@ -13,6 +13,10 @@ public class PrincipalView extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JMenuItem getjMenuItemGraficoBarras() {
+        return jMenuItemGraficoBarras;
+    }
+
     public JDesktopPane getjDesktopPanePrincipalView() {
         return jDesktopPanePrincipalView;
     }
@@ -65,6 +69,8 @@ public class PrincipalView extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         jMenuItemLogTxt = new javax.swing.JMenuItem();
         jMenuItemLogMySQL = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuItemGraficoBarras = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItemSair = new javax.swing.JMenuItem();
 
@@ -118,6 +124,13 @@ public class PrincipalView extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
+        jMenu5.setText("Gráfico");
+
+        jMenuItemGraficoBarras.setText("Gráfico de Barras");
+        jMenu5.add(jMenuItemGraficoBarras);
+
+        jMenuBar1.add(jMenu5);
+
         jMenu2.setText("Sistema");
 
         jMenuItemSair.setText("Sair do Sistema");
@@ -131,17 +144,17 @@ public class PrincipalView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPanePrincipalView, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(703, Short.MAX_VALUE)
-                .addComponent(jLabelTotalCadastrado, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabelTotalCadastrado, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jDesktopPanePrincipalView, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jDesktopPanePrincipalView, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jDesktopPanePrincipalView, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelTotalCadastrado, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -166,8 +179,10 @@ public class PrincipalView extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItemAdicionarFuncionario;
+    private javax.swing.JMenuItem jMenuItemGraficoBarras;
     private javax.swing.JMenuItem jMenuItemListarFuncionario;
     private javax.swing.JMenuItem jMenuItemLogMySQL;
     private javax.swing.JMenuItem jMenuItemLogTxt;

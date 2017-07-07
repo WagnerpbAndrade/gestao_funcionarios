@@ -84,6 +84,7 @@ public final class ListarFuncionariosView extends javax.swing.JInternalFrame {
         jButtonEditar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButtonEditar.setText("Editar");
 
+        jButtonRemover.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButtonRemover.setText("Remover");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

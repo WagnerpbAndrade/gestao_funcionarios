@@ -32,6 +32,7 @@ public class VisualizarFuncionarioCommand implements IFuncionarioCommand {
     @Override
     public void executar(IncluirFuncionarioPresenter presenter) {
         this.view = presenter.getView();
+        this.view.getjButtonDesfazer().setVisible(false);
         this.funcionario = this.funcionarios.getFuncionarioSelecionado();
 
         //Gerar Log

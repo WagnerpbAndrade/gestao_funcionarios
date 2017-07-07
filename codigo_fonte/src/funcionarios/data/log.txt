@@ -29,3 +29,4 @@ Insersão: ,asdfasdfasdf foi cadastrado!,07/07/2017 17:12:06
 Insersão: ,testeteste foi cadastrado!,07/07/2017 17:12:33
 Edição: ,O funcionário: testetestefoi editado para: testetesteaaa,(22)2222-2222,222.0,21567.3,Gerente,Brasil,222,222,[Generoso, Localidade, Dependentes],07/07/2017 17:13:24
 Insersão: ,asdf foi cadastrado!,07/07/2017 17:15:27
+Visualização: ,asdfasdfasdf foi visualizado! ,07/07/2017 18:15:08
