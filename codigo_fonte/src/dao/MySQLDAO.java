@@ -67,7 +67,7 @@ public class MySQLDAO extends AbstractMySQL implements IFuncionarioDAO {
         Connection con = ConexaoMySQL.getInstance().getConexao();
         Statement stat = con.createStatement();
 
-        ResultSet rs = stat.executeQuery("SELECT * FROM funcionario");
+        ResultSet rs = stat.executeQuery("SELECT * FROM funcionario WHERE status = 1");
         while (rs.next()) {
             ArrayList<String> bonus = new ArrayList<>();
             ResultSet result;
@@ -92,7 +92,7 @@ public class MySQLDAO extends AbstractMySQL implements IFuncionarioDAO {
             result.close();
 
             Funcionario f = new Funcionario(id, nome, telefone, salarioBase, salarioBonus, cargo, regiao, bonus, assiduidade, dependentes);
-            
+
             funcionarios.add(f);
         }
 
@@ -104,7 +104,7 @@ public class MySQLDAO extends AbstractMySQL implements IFuncionarioDAO {
 
     @Override
     public void editarFuncionario(Collection<Funcionario> c, Funcionario f) throws Exception {
-        
+
         String query = "UPDATE funcionario SET "
                 + "nome = '" + f.getNome() + "',"
                 + "telefone = '" + f.getTelefone() + "',"
@@ -142,9 +142,19 @@ public class MySQLDAO extends AbstractMySQL implements IFuncionarioDAO {
 
     @Override
     public void removerFuncionario(Collection<Funcionario> c, Funcionario funcionario) throws Exception {
-        
+
         String sql = "DELETE FROM funcionario WHERE idFuncionario = '" + funcionario.getId() + "'";
-        
+
+        updateDB(sql);
+    }
+
+    @Override
+    public void atualizarStatus(Funcionario f) throws Exception {
+
+        System.out.println("id: " + f.getId());
+
+        String sql = "UPDATE funcionario SET status = 0 WHERE nome = '" + f.getNome() + "'";
+
         updateDB(sql);
     }
 

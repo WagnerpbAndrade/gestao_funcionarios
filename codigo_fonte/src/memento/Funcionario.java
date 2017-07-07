@@ -65,7 +65,7 @@ public class Funcionario implements Comparable<Funcionario> {
         return new FuncionarioMemento(id, nome, telefone, salarioBase, salarioComBonus, cargo, regiao, assiduidade, numeroDependentes, bonus);
     }
     
-    public void restaurar(FuncionarioMemento memento){
+    public Funcionario restaurar(FuncionarioMemento memento){
         this.id = memento.getId();
         this.nome = memento.getNome();
         this.telefone = memento.getTelefone();
@@ -76,6 +76,9 @@ public class Funcionario implements Comparable<Funcionario> {
         this.assiduidade = memento.getAssiduidade();
         this.numeroDependentes = memento.getNumeroDependentes();
         this.bonus = memento.getBonus();
+        
+        
+        return this;
     }
 
     public int getId() {

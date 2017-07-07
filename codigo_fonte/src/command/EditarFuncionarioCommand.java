@@ -22,6 +22,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import dao.IFuncionarioDAO;
+import zelador.Zelador;
 
 /**
  *
@@ -33,6 +34,7 @@ public class EditarFuncionarioCommand implements IFuncionarioCommand {
     private IncluirFuncionarioView view;
     private Funcionario funcionarioSelecionado;
     private IFuncionarioDAO dao;
+    private Zelador zelador;
 
     public EditarFuncionarioCommand() {
 
@@ -40,17 +42,20 @@ public class EditarFuncionarioCommand implements IFuncionarioCommand {
 
             this.funcionarios = Funcionarios.getInstance();
             this.dao = FabricaDAO.getInstance().create();
+            this.zelador = Zelador.getInstance();
 
         } catch (Exception ex) {
             Logger.getLogger(EditarFuncionarioCommand.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
-
+    
     @Override
     public void executar(IncluirFuncionarioPresenter presenter) {
         this.view = presenter.getView();
         this.funcionarioSelecionado = this.funcionarios.getFuncionarioSelecionado();
+
+        this.view.getjButtonDesfazer().setVisible(false);
 
         this.view.getjButtonBonus().setVisible(false);
 
@@ -83,7 +88,7 @@ public class EditarFuncionarioCommand implements IFuncionarioCommand {
 
         this.view.getBtnSalvar().addActionListener((e) -> {
             try {
-                btnSalvar();
+                btnSalvar(funcionarioSelecionado);
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, "<html><body>"
                         + "<h3>"
@@ -104,7 +109,7 @@ public class EditarFuncionarioCommand implements IFuncionarioCommand {
         this.view.dispose();
     }
 
-    private void btnSalvar() throws Exception {
+    private void btnSalvar(Funcionario funcionario) throws Exception {
 
         String nome = this.view.getTxtNome().getText();
         String telefone = this.view.getTxtTelefone().getText();
@@ -149,18 +154,24 @@ public class EditarFuncionarioCommand implements IFuncionarioCommand {
             }
 
             Funcionario funcionarioEditado = new Funcionario(nome, telefone, salarioConvertido, salarioConvertido, cargo, regiao, bonus, faltas, dependentes);
-            funcionarioEditado.setId(funcionarioSelecionado.getId());
 
             tratarBonus(funcionarioEditado);
 
-            editarFuncionario(funcionarioEditado);
+            if (funcionario.getId() != 0) {
+                funcionarioEditado.setId(funcionario.getId());
+
+                editarFuncionario(funcionarioEditado);
+
+            } else {
+                this.funcionarios.add(funcionarioEditado);
+            }
 
             JOptionPane.showMessageDialog(view, "Funcionário editado com sucesso!");
 
             //GerarLog
             DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
             Date date = new Date();
-            Logs.getInstance().addLog(new Log("Edição: ", "O funcionário: " + funcionarioSelecionado.getNome() + "foi editado para: " + funcionarioEditado.toString(), dateFormat.format(date)));
+            Logs.getInstance().addLog(new Log("Edição: ", "O funcionário: " + funcionario.getNome() + "foi editado para: " + funcionarioEditado.toString(), dateFormat.format(date)));
 
             btnFechar();
 
@@ -200,6 +211,63 @@ public class EditarFuncionarioCommand implements IFuncionarioCommand {
         p.addTratador(dependentes);
 
         p.processar();
+    }
+
+    @Override
+    public void desfazer(IncluirFuncionarioPresenter presenter) throws Exception {
+
+        this.view = presenter.getView();
+
+        Funcionario f = this.funcionarios.getFuncionarioSelecionado();
+
+        this.view.getjButtonDesfazer().setVisible(false);
+
+        this.view.getjButtonBonus().setVisible(false);
+
+        //Desabilitando os campos da view
+        this.view.getTxtNome().setEnabled(true);
+        this.view.getTxtTelefone().setEnabled(true);
+        this.view.getjTextFieldAssiduidade().setEnabled(true);
+        this.view.getjTextFieldSalario().setEnabled(true);
+        this.view.getjTextFieldSalarioComBonus().setEnabled(false);
+        this.view.getjTextFieldDependentes().setEnabled(true);
+        this.view.getjComboBoxBonus().setEnabled(true);
+        this.view.getjComboBoxCargo().setEnabled(true);
+        this.view.getjComboBoxRegiao().setEnabled(true);
+
+        //Configurando os títulos
+        this.view.getjLabelTitulo().setText("Editar Funcionário");
+        this.view.setTitle("Editar Funcionário");
+        this.view.getBtnSalvar().setText("Salvar");
+
+        //Settando os dados do funcionário
+        this.view.getTxtNome().setText(f.getNome());
+        this.view.getTxtTelefone().setText(f.getTelefone());
+        this.view.getjTextFieldAssiduidade().setText(String.valueOf(f.getAssiduidade()));
+        this.view.getjTextFieldSalario().setText(String.valueOf(f.getSalarioBase()));
+        this.view.getjTextFieldSalarioComBonus().setText(String.valueOf(f.getSalarioComBonus()));
+        this.view.getjTextFieldDependentes().setText(String.valueOf(f.getNumeroDependentes()));
+        this.view.getjComboBoxBonus().getModel().setSelectedItem(f.getBonus().get(0));
+        this.view.getjComboBoxCargo().getModel().setSelectedItem(f.getCargo());
+        this.view.getjComboBoxRegiao().getModel().setSelectedItem(f.getRegiao());
+
+        this.view.getBtnSalvar().addActionListener((e) -> {
+            try {
+
+                btnSalvar(f);
+
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "<html><body>"
+                        + "<h3>"
+                        + "<font face='Arial'>" + ex.getMessage() + "</font>"
+                        + "</h3>"
+                        + "</body></html>", "MENSAGEM", 1);
+            }
+        });
+
+        this.view.getBtnFechar().addActionListener((e) -> {
+            btnFechar();
+        });
     }
 
 }

@@ -18,5 +18,5 @@ public class InclusaoFuncionarioState extends FuncionarioState {
     public void inclusao() throws Exception {
         this.command.executar(presenter);
     }
-
+    
 }

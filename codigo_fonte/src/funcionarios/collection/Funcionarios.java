@@ -49,6 +49,12 @@ public final class Funcionarios implements Observado {
         notificar();
 
     }
+    
+    public void atualizarStatus(Funcionario f) throws Exception{
+        this.dao.atualizarStatus(f);
+        
+        notificar();
+    }
 
     public void editarFuncionario(Collection<Funcionario> c, Funcionario f) throws Exception {
 

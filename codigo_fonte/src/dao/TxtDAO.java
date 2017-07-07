@@ -97,7 +97,21 @@ public class TxtDAO implements IFuncionarioDAO {
 
     @Override
     public void removerFuncionario(Collection<Funcionario> c, Funcionario funcionario) throws Exception {
+        for(Funcionario f : c){
+            if( funcionario.equals(f))
+                c.remove(f);
+            
+            break;        
+        }
         
+        FileWriter w = new FileWriter(arquivo);
+        BufferedWriter bf = new BufferedWriter(w);
+
+        for (Funcionario f : c) {
+            bf.write(f.toString());
+            bf.newLine();
+        }
+        bf.close();       
     }
 
 }

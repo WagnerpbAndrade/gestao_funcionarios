@@ -19,8 +19,9 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import state.InclusaoFuncionarioState;
 import dao.IFuncionarioDAO;
+import funcionarios.collection.Funcionarios;
+import state.EdicaoFuncionarioState;
 import zelador.Zelador;
 
 /**
@@ -34,6 +35,7 @@ public class IncluirFuncionarioCommand implements IFuncionarioCommand {
     private ITratador tratador;
     private Zelador zelador;
     private Funcionario f;
+    private Funcionarios funcionarios;
 
     public IncluirFuncionarioCommand() {
 
@@ -41,6 +43,7 @@ public class IncluirFuncionarioCommand implements IFuncionarioCommand {
 
             this.dao = FabricaDAO.getInstance().create();
             this.zelador = Zelador.getInstance();
+            this.funcionarios = Funcionarios.getInstance();
 
         } catch (Exception ex) {
             Logger.getLogger(IncluirFuncionarioCommand.class.getName()).log(Level.SEVERE, null, ex);
@@ -56,6 +59,9 @@ public class IncluirFuncionarioCommand implements IFuncionarioCommand {
         this.view.getjTextFieldSalarioComBonus().setEnabled(false);
         this.view.getjButtonBonus().setVisible(false);
 
+//        if (this.zelador.getQtdEstados() == 0){
+//            this.view.getjButtonDesfazer().setVisible(false);
+//        }
         this.view.getBtnSalvar().addActionListener((e) -> {
             try {
 
@@ -77,9 +83,11 @@ public class IncluirFuncionarioCommand implements IFuncionarioCommand {
         this.view.getjButtonDesfazer().addActionListener((e) -> {
             try {
 
-                btnDesfazer();
+                btnDesfazer(presenter);
 
             } catch (Exception ex) {
+
+                //Logger.getLogger(IncluirFuncionarioCommand.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null, "<html><body>"
                         + "<h3>"
                         + "<font face='Arial'>" + ex.getMessage() + "</font>"
@@ -87,17 +95,6 @@ public class IncluirFuncionarioCommand implements IFuncionarioCommand {
                         + "</body></html>", "MENSAGEM", 1);
             }
         });
-
-    }
-
-    private void btnDesfazer() throws Exception {
-        if (this.zelador.getQtdEstados() <= 0) {
-            throw new Exception("Nenhum estado salvo!");
-        }
-        
-        this.f.restaurar(this.zelador.getUltimoSalvo());
-        
-        throw new Exception("Operação realizada com sucesso!");
 
     }
 
@@ -193,4 +190,29 @@ public class IncluirFuncionarioCommand implements IFuncionarioCommand {
         p.processar();
     }
 
+    @Override
+    public void desfazer(IncluirFuncionarioPresenter presenter) {
+
+    }
+
+    private void btnDesfazer(IncluirFuncionarioPresenter presenter) throws Exception {
+        if (this.zelador.getQtdEstados() <= 0) {
+            throw new Exception("Nenhum estado salvo!");
+        }
+
+        Funcionario restaurado = f.restaurar(this.zelador.getUltimoSalvo());
+
+        this.funcionarios.setFuncionarioSelecionado(restaurado);
+
+        this.funcionarios.atualizarStatus(restaurado);
+
+        presenter = new IncluirFuncionarioPresenter();
+        presenter.setState(new EdicaoFuncionarioState(presenter));
+        presenter.desfazer();
+
+        btnFechar();
+
+        throw new Exception("Operação realizada com sucesso!");
+
+    }
 }

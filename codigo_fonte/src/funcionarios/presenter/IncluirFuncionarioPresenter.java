@@ -60,6 +60,10 @@ public class IncluirFuncionarioPresenter {
         this.setState(new VisualizacaoFuncionarioState(this));
         this.state.visualizacao();
     }
+    public void desfazer() throws Exception{
+        this.setState(new EdicaoFuncionarioState(this));
+        this.state.desfazer();
+    }
     
     public void setState(FuncionarioState state){
         this.state = state;

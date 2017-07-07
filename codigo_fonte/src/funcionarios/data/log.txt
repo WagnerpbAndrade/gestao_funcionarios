@@ -5,3 +5,27 @@ Visualização: ,Wagner Andrade foi visualizado! ,28/05/2017 13:40:16
 Persistência de dados: , Alterado para MySQLDAO ,05/07/2017 16:03:12
 Insersão: ,Wagner foi cadastrado!,05/07/2017 16:03:41
 Visualização: ,Wagner foi visualizado! ,05/07/2017 16:07:17
+Insersão: ,teste2 foi cadastrado!,07/07/2017 15:19:34
+Visualização: ,Teste foi visualizado! ,07/07/2017 15:21:36
+Insersão: ,teste3 foi cadastrado!,07/07/2017 15:21:55
+Insersão: ,teste4 foi cadastrado!,07/07/2017 15:22:44
+Insersão: ,teetete foi cadastrado!,07/07/2017 15:24:22
+Insersão: ,teste5 foi cadastrado!,07/07/2017 15:35:38
+Insersão: ,Testando foi cadastrado!,07/07/2017 15:38:07
+Insersão: ,Testando2 foi cadastrado!,07/07/2017 15:39:46
+Insersão: ,WagnerWagner foi cadastrado!,07/07/2017 15:42:08
+Insersão: ,asdfasd foi cadastrado!,07/07/2017 16:00:45
+Insersão: ,bbbb foi cadastrado!,07/07/2017 16:02:50
+Insersão: ,akakak foi cadastrado!,07/07/2017 16:05:07
+Insersão: ,Wagner Andrade foi cadastrado!,07/07/2017 16:41:49
+Insersão: ,Wagner Andrade foi cadastrado!,07/07/2017 16:49:32
+Insersão: ,Wagner Andradee foi cadastrado!,07/07/2017 16:52:56
+Insersão: ,Wagner Andradeee foi cadastrado!,07/07/2017 16:54:39
+Insersão: ,Wagner foi cadastrado!,07/07/2017 17:03:07
+Insersão: ,Paulo foi cadastrado!,07/07/2017 17:07:09
+Edição: ,O funcionário: Paulofoi editado para: Paulo Andrade,(22)2222-2222,100.0,309.0,Gerente,Brasil,2,2,[Generoso, Assiduidade, Localidade, Dependentes],07/07/2017 17:07:24
+Visualização: ,Paulo Andrade foi visualizado! ,07/07/2017 17:07:40
+Insersão: ,asdfasdfasdf foi cadastrado!,07/07/2017 17:12:06
+Insersão: ,testeteste foi cadastrado!,07/07/2017 17:12:33
+Edição: ,O funcionário: testetestefoi editado para: testetesteaaa,(22)2222-2222,222.0,21567.3,Gerente,Brasil,222,222,[Generoso, Localidade, Dependentes],07/07/2017 17:13:24
+Insersão: ,asdf foi cadastrado!,07/07/2017 17:15:27

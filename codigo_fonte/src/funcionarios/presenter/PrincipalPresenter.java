@@ -22,6 +22,8 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import observer.Observador;
 import dao.IFuncionarioDAO;
+import java.awt.Frame;
+import java.awt.Window;
 
 /**
  *
@@ -187,9 +189,10 @@ public class PrincipalPresenter implements Observador {
 
         update();
 
-        setDimension();
+        //setDimension();
+        this.view.setExtendedState(Frame.MAXIMIZED_BOTH);
         this.view.getjDesktopPanePrincipalView().setVisible(true);
-        this.view.setResizable(false);
+        //this.view.setResizable(false);
         this.view.setLocationRelativeTo(null);
         this.view.setVisible(true);
     }

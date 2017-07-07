@@ -26,6 +26,7 @@ public class IncluirFuncionarioView extends javax.swing.JInternalFrame {
     public IncluirFuncionarioView() {
         initComponents();
     }
+    
 
     public JTextField getTxtNome() {
         return txtNome;
@@ -315,11 +316,12 @@ public class IncluirFuncionarioView extends javax.swing.JInternalFrame {
                     .addComponent(jLabel5)
                     .addComponent(jComboBoxRegiao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnFechar)
-                    .addComponent(btnSalvar)
-                    .addComponent(jButtonBonus)
-                    .addComponent(jButtonDesfazer, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonDesfazer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnFechar)
+                        .addComponent(btnSalvar)
+                        .addComponent(jButtonBonus)))
                 .addGap(25, 25, 25))
         );
 

@@ -18,4 +18,11 @@ public class EdicaoFuncionarioState extends FuncionarioState{
     public void edicao() throws Exception {
         this.command.executar(presenter);
     }
+
+    @Override
+    public void desfazer() throws Exception {
+        this.command.desfazer(presenter);
+    }
+    
+    
 }
