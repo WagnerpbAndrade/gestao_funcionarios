@@ -63,23 +63,35 @@ public class PrincipalView extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItemAdicionarFuncionario = new javax.swing.JMenuItem();
         jMenuItemListarFuncionario = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuItemGraficoBarras = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItemPersistenciaTxt = new javax.swing.JMenuItem();
         jMenuItemPersistenciaMySQL = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItemLogTxt = new javax.swing.JMenuItem();
         jMenuItemLogMySQL = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
-        jMenuItemGraficoBarras = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItemSair = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Cadastro de pessoas");
+        setTitle("Gestão de Funcionários");
 
+        jDesktopPanePrincipalView.setBackground(new java.awt.Color(0, 0, 0));
+
+        jLabelTotalCadastrado.setBackground(new java.awt.Color(0, 0, 0));
         jLabelTotalCadastrado.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabelTotalCadastrado.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelTotalCadastrado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
+        jMenuBar1.setPreferredSize(new java.awt.Dimension(101, 60));
 
         jMenu1.setText("Funcionário");
+        jMenu1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jMenu1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jMenu1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jMenu1.setPreferredSize(new java.awt.Dimension(101, 60));
         jMenu1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenu1ActionPerformed(evt);
@@ -87,6 +99,7 @@ public class PrincipalView extends javax.swing.JFrame {
         });
 
         jMenuItemAdicionarFuncionario.setText("Adicionar Funcionário");
+        jMenuItemAdicionarFuncionario.setPreferredSize(new java.awt.Dimension(173, 33));
         jMenuItemAdicionarFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItemAdicionarFuncionarioActionPerformed(evt);
@@ -95,6 +108,7 @@ public class PrincipalView extends javax.swing.JFrame {
         jMenu1.add(jMenuItemAdicionarFuncionario);
 
         jMenuItemListarFuncionario.setText("Listar Funcionários");
+        jMenuItemListarFuncionario.setPreferredSize(new java.awt.Dimension(173, 33));
         jMenuItemListarFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItemListarFuncionarioActionPerformed(evt);
@@ -104,36 +118,54 @@ public class PrincipalView extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+        jMenu5.setText("Gráfico");
+        jMenu5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jMenu5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jMenu5.setPreferredSize(new java.awt.Dimension(101, 60));
+
+        jMenuItemGraficoBarras.setText("Gráfico de Barras");
+        jMenuItemGraficoBarras.setPreferredSize(new java.awt.Dimension(143, 30));
+        jMenu5.add(jMenuItemGraficoBarras);
+
+        jMenuBar1.add(jMenu5);
+
         jMenu3.setText("Persistência");
+        jMenu3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jMenu3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jMenu3.setPreferredSize(new java.awt.Dimension(105, 60));
 
         jMenuItemPersistenciaTxt.setText("Persistência de dados em TXT");
+        jMenuItemPersistenciaTxt.setPreferredSize(new java.awt.Dimension(255, 33));
         jMenu3.add(jMenuItemPersistenciaTxt);
 
         jMenuItemPersistenciaMySQL.setText("Persistência de dados em MySQL");
+        jMenuItemPersistenciaMySQL.setPreferredSize(new java.awt.Dimension(255, 33));
         jMenu3.add(jMenuItemPersistenciaMySQL);
 
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Log");
+        jMenu4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jMenu4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jMenu4.setPreferredSize(new java.awt.Dimension(101, 60));
 
         jMenuItemLogTxt.setText("Salvar Log Txt");
+        jMenuItemLogTxt.setPreferredSize(new java.awt.Dimension(145, 33));
         jMenu4.add(jMenuItemLogTxt);
 
         jMenuItemLogMySQL.setText("Salvar Log MySQL");
+        jMenuItemLogMySQL.setPreferredSize(new java.awt.Dimension(145, 33));
         jMenu4.add(jMenuItemLogMySQL);
 
         jMenuBar1.add(jMenu4);
 
-        jMenu5.setText("Gráfico");
-
-        jMenuItemGraficoBarras.setText("Gráfico de Barras");
-        jMenu5.add(jMenuItemGraficoBarras);
-
-        jMenuBar1.add(jMenu5);
-
         jMenu2.setText("Sistema");
+        jMenu2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jMenu2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jMenu2.setPreferredSize(new java.awt.Dimension(101, 19));
 
         jMenuItemSair.setText("Sair do Sistema");
+        jMenuItemSair.setPreferredSize(new java.awt.Dimension(131, 30));
         jMenu2.add(jMenuItemSair);
 
         jMenuBar1.add(jMenu2);
@@ -144,18 +176,15 @@ public class PrincipalView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabelTotalCadastrado, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jDesktopPanePrincipalView, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jDesktopPanePrincipalView, javax.swing.GroupLayout.DEFAULT_SIZE, 920, Short.MAX_VALUE)
+            .addComponent(jLabelTotalCadastrado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jDesktopPanePrincipalView, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jDesktopPanePrincipalView, javax.swing.GroupLayout.DEFAULT_SIZE, 663, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelTotalCadastrado, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabelTotalCadastrado, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();

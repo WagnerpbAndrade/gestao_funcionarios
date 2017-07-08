@@ -53,7 +53,7 @@ public class GerarGrafico {
     }
     
     public JFreeChart criarGrafico(){
-         return this.grafico = ChartFactory.createBarChart3D(titulo, txt_legenda, eixoy, createDataset(), PlotOrientation.VERTICAL, legenda, tooltips, urls);
+         return ChartFactory.createBarChart3D(titulo, txt_legenda, eixoy, createDataset(), PlotOrientation.VERTICAL, legenda, tooltips, urls);
     }
     
     private CategoryDataset createDataset(){

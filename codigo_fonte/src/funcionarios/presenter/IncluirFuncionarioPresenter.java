@@ -15,11 +15,11 @@ public class IncluirFuncionarioPresenter {
     private FuncionarioState state;
 
     public IncluirFuncionarioPresenter() {
-        
+
         try {
-            
+
             configuraTela();
-            
+
         } catch (FileNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "<html><body>"
                     + "<h3>"
@@ -28,47 +28,51 @@ public class IncluirFuncionarioPresenter {
                     + "</body></html>", "MENSAGEM", 1);
 //            Logger.getLogger(IncluirFuncionarioPresenter.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         PrincipalPresenter.getInstance().getView().getjDesktopPanePrincipalView().add(view);
     }
 
     private void configuraTela() throws FileNotFoundException {
-        
+
         this.view = new IncluirFuncionarioView();
+        
+        
+        setDimension();
         this.view.setResizable(true);
         this.view.setVisible(true);
-        
+
     }
-    
-    private void setDimension(){
+
+    private void setDimension() {
         Dimension d = PrincipalPresenter.getInstance().getView().getjDesktopPanePrincipalView().getSize();
-        
-        this.view.setSize(d);
+
+        this.view.setLocation( (d.width - this.view.getSize().width) / 2, (d.height - this.view.getSize().height) / 2);
     }
-    
-    public void inclusao() throws Exception{
+
+    public void inclusao() throws Exception {
         this.setState(new InclusaoFuncionarioState(this));
         this.state.inclusao();
     }
-    
-    public void edicao() throws Exception{
+
+    public void edicao() throws Exception {
         this.setState(new EdicaoFuncionarioState(this));
         this.state.edicao();
     }
-    
-    public void visualizacao() throws Exception{
+
+    public void visualizacao() throws Exception {
         this.setState(new VisualizacaoFuncionarioState(this));
         this.state.visualizacao();
     }
-    public void desfazer() throws Exception{
+
+    public void desfazer() throws Exception {
         this.setState(new EdicaoFuncionarioState(this));
         this.state.desfazer();
     }
-    
-    public void setState(FuncionarioState state){
+
+    public void setState(FuncionarioState state) {
         this.state = state;
     }
-    
+
     public IncluirFuncionarioView getView() {
         return view;
     }

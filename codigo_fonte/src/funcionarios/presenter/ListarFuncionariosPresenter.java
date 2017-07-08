@@ -23,6 +23,7 @@ import observer.Observador;
 import state.EdicaoFuncionarioState;
 import state.VisualizacaoFuncionarioState;
 import dao.IFuncionarioDAO;
+import java.awt.Dimension;
 
 /**
  *
@@ -133,8 +134,15 @@ public final class ListarFuncionariosPresenter implements Observador {
             }
         });
 
+        setDimension();
         this.view.setResizable(false);
         this.view.setVisible(true);
+    }
+    
+    private void setDimension() {
+        Dimension d = PrincipalPresenter.getInstance().getView().getjDesktopPanePrincipalView().getSize();
+
+        this.view.setLocation( (d.width - this.view.getSize().width) / 2, (d.height - this.view.getSize().height) / 2);
     }
 
     private void ordenaTelefone() throws Exception {
