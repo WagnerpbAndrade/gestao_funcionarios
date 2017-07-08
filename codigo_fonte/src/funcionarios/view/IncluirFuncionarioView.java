@@ -214,7 +214,9 @@ public class IncluirFuncionarioView extends javax.swing.JInternalFrame {
         jButtonBonus.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButtonBonus.setText("Bônus");
 
-        jButtonDesfazer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/desfazer.png"))); // NOI18N
+        jButtonDesfazer.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jButtonDesfazer.setText("Desfazer");
+        jButtonDesfazer.setPreferredSize(new java.awt.Dimension(150, 33));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -243,7 +245,7 @@ public class IncluirFuncionarioView extends javax.swing.JInternalFrame {
                                                 .addComponent(jLabel6))
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(24, 24, 24)
-                                                .addComponent(jButtonDesfazer, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(jButtonDesfazer, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -317,7 +319,7 @@ public class IncluirFuncionarioView extends javax.swing.JInternalFrame {
                     .addComponent(jComboBoxRegiao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonDesfazer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonDesfazer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnFechar)
                         .addComponent(btnSalvar)

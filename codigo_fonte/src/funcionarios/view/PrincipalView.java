@@ -87,19 +87,21 @@ public class PrincipalView extends javax.swing.JFrame {
         jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
         jMenuBar1.setPreferredSize(new java.awt.Dimension(101, 60));
 
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/people_32x32.png"))); // NOI18N
         jMenu1.setText("Funcionário");
         jMenu1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jMenu1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jMenu1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jMenu1.setPreferredSize(new java.awt.Dimension(101, 60));
+        jMenu1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jMenu1.setPreferredSize(new java.awt.Dimension(150, 60));
         jMenu1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenu1ActionPerformed(evt);
             }
         });
 
+        jMenuItemAdicionarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add_24x24.png"))); // NOI18N
         jMenuItemAdicionarFuncionario.setText("Adicionar Funcionário");
-        jMenuItemAdicionarFuncionario.setPreferredSize(new java.awt.Dimension(173, 33));
+        jMenuItemAdicionarFuncionario.setPreferredSize(new java.awt.Dimension(280, 33));
         jMenuItemAdicionarFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItemAdicionarFuncionarioActionPerformed(evt);
@@ -107,8 +109,9 @@ public class PrincipalView extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItemAdicionarFuncionario);
 
+        jMenuItemListarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/list_24x24.png"))); // NOI18N
         jMenuItemListarFuncionario.setText("Listar Funcionários");
-        jMenuItemListarFuncionario.setPreferredSize(new java.awt.Dimension(173, 33));
+        jMenuItemListarFuncionario.setPreferredSize(new java.awt.Dimension(280, 33));
         jMenuItemListarFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItemListarFuncionarioActionPerformed(evt);
@@ -118,54 +121,70 @@ public class PrincipalView extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/chart_32x32.png"))); // NOI18N
         jMenu5.setText("Gráfico");
         jMenu5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jMenu5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jMenu5.setPreferredSize(new java.awt.Dimension(101, 60));
+        jMenu5.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jMenu5.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jMenu5.setPreferredSize(new java.awt.Dimension(150, 60));
 
+        jMenuItemGraficoBarras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/barra_24x24.png"))); // NOI18N
         jMenuItemGraficoBarras.setText("Gráfico de Barras");
-        jMenuItemGraficoBarras.setPreferredSize(new java.awt.Dimension(143, 30));
+        jMenuItemGraficoBarras.setPreferredSize(new java.awt.Dimension(240, 30));
         jMenu5.add(jMenuItemGraficoBarras);
 
         jMenuBar1.add(jMenu5);
 
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/db_32x32.png"))); // NOI18N
         jMenu3.setText("Persistência");
         jMenu3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jMenu3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jMenu3.setPreferredSize(new java.awt.Dimension(105, 60));
+        jMenu3.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jMenu3.setPreferredSize(new java.awt.Dimension(150, 60));
 
-        jMenuItemPersistenciaTxt.setText("Persistência de dados em TXT");
-        jMenuItemPersistenciaTxt.setPreferredSize(new java.awt.Dimension(255, 33));
+        jMenuItemPersistenciaTxt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/txt_24x24.png"))); // NOI18N
+        jMenuItemPersistenciaTxt.setText("Em TXT");
+        jMenuItemPersistenciaTxt.setPreferredSize(new java.awt.Dimension(240, 33));
         jMenu3.add(jMenuItemPersistenciaTxt);
 
-        jMenuItemPersistenciaMySQL.setText("Persistência de dados em MySQL");
-        jMenuItemPersistenciaMySQL.setPreferredSize(new java.awt.Dimension(255, 33));
+        jMenuItemPersistenciaMySQL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/db_24x24_1.png"))); // NOI18N
+        jMenuItemPersistenciaMySQL.setText("Em MySQL");
+        jMenuItemPersistenciaMySQL.setPreferredSize(new java.awt.Dimension(240, 33));
+        jMenuItemPersistenciaMySQL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemPersistenciaMySQLActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItemPersistenciaMySQL);
 
         jMenuBar1.add(jMenu3);
 
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/log_32x32.png"))); // NOI18N
         jMenu4.setText("Log");
         jMenu4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jMenu4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jMenu4.setPreferredSize(new java.awt.Dimension(101, 60));
+        jMenu4.setPreferredSize(new java.awt.Dimension(150, 60));
 
-        jMenuItemLogTxt.setText("Salvar Log Txt");
-        jMenuItemLogTxt.setPreferredSize(new java.awt.Dimension(145, 33));
+        jMenuItemLogTxt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/txt_24x24.png"))); // NOI18N
+        jMenuItemLogTxt.setText("Em TXT");
+        jMenuItemLogTxt.setPreferredSize(new java.awt.Dimension(200, 33));
         jMenu4.add(jMenuItemLogTxt);
 
-        jMenuItemLogMySQL.setText("Salvar Log MySQL");
-        jMenuItemLogMySQL.setPreferredSize(new java.awt.Dimension(145, 33));
+        jMenuItemLogMySQL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/db_24x24_1.png"))); // NOI18N
+        jMenuItemLogMySQL.setText("Em MySQL");
+        jMenuItemLogMySQL.setPreferredSize(new java.awt.Dimension(200, 33));
         jMenu4.add(jMenuItemLogMySQL);
 
         jMenuBar1.add(jMenu4);
 
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/system_32x32.png"))); // NOI18N
         jMenu2.setText("Sistema");
         jMenu2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jMenu2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jMenu2.setPreferredSize(new java.awt.Dimension(101, 19));
+        jMenu2.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jMenu2.setPreferredSize(new java.awt.Dimension(150, 19));
 
+        jMenuItemSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/exit_24x24.png"))); // NOI18N
         jMenuItemSair.setText("Sair do Sistema");
-        jMenuItemSair.setPreferredSize(new java.awt.Dimension(131, 30));
+        jMenuItemSair.setPreferredSize(new java.awt.Dimension(240, 30));
         jMenu2.add(jMenuItemSair);
 
         jMenuBar1.add(jMenu2);
@@ -200,6 +219,10 @@ public class PrincipalView extends javax.swing.JFrame {
     private void jMenuItemListarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemListarFuncionarioActionPerformed
        
     }//GEN-LAST:event_jMenuItemListarFuncionarioActionPerformed
+
+    private void jMenuItemPersistenciaMySQLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemPersistenciaMySQLActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItemPersistenciaMySQLActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPanePrincipalView;

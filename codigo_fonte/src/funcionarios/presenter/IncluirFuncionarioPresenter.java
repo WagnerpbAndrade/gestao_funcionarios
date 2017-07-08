@@ -38,7 +38,7 @@ public class IncluirFuncionarioPresenter {
         
         
         setDimension();
-        this.view.setResizable(true);
+        this.view.setResizable(false);
         this.view.setVisible(true);
 
     }

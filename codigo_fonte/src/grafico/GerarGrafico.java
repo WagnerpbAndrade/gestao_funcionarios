@@ -1,5 +1,10 @@
 package grafico;
 
+import dao.IFuncionarioDAO;
+import factoryMethodDinamico.FabricaDAO;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import memento.Funcionario;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
@@ -17,7 +22,9 @@ public class GerarGrafico {
     private boolean legenda;
     private boolean tooltips;
     private boolean urls;
-    private JFreeChart grafico;
+    private IFuncionarioDAO dao;
+    private double salarioB, salarioC, salarioS;
+    
 
     public GerarGrafico(String titulo, String eixoy, String txt_legenda, boolean legenda, boolean tooltips, boolean urls) {
         this.titulo = titulo;
@@ -26,6 +33,14 @@ public class GerarGrafico {
         this.legenda = legenda;
         this.tooltips = tooltips;
         this.urls = urls;
+        
+        try {
+            
+            this.dao = FabricaDAO.getInstance().create();
+            
+        } catch (Exception ex) {
+            Logger.getLogger(GerarGrafico.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public String getTitulo() {
@@ -58,9 +73,23 @@ public class GerarGrafico {
     
     private CategoryDataset createDataset(){
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        dataset.addValue(1000.0, "01/2012", "Mês/Ano");
-        dataset.addValue(1690.0, "02/2012", "Mês/Ano");
-        dataset.addValue(90.0, "03/2012", "Mês/Ano");
+        
+        try {
+            for(Funcionario f: this.dao.getAll()){
+                if(f.getRegiao().equals("Brasil"))
+                    salarioB += f.getSalarioComBonus();
+                else if (f.getRegiao().equals("Caribe"))
+                    salarioC += f.getSalarioComBonus();
+                else
+                    salarioS =+ f.getSalarioComBonus();
+            }
+                
+        } catch (Exception ex) {
+            Logger.getLogger(GerarGrafico.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        dataset.addValue(salarioB, "Brasil", "País");
+        dataset.addValue(salarioC, "Caribe", "País");
+        dataset.addValue(salarioS, "Síria", "País");
         
         return dataset;
     }

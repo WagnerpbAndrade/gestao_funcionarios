@@ -30,3 +30,12 @@ Insersão: ,testeteste foi cadastrado!,07/07/2017 17:12:33
 Edição: ,O funcionário: testetestefoi editado para: testetesteaaa,(22)2222-2222,222.0,21567.3,Gerente,Brasil,222,222,[Generoso, Localidade, Dependentes],07/07/2017 17:13:24
 Insersão: ,asdf foi cadastrado!,07/07/2017 17:15:27
 Visualização: ,asdfasdfasdf foi visualizado! ,07/07/2017 18:15:08
+Insersão: ,Wagner Andrade foi cadastrado!,08/07/2017 19:30:51
+Insersão: ,Carlos  foi cadastrado!,08/07/2017 19:32:09
+Visualização: ,Wagner Andrade foi visualizado! ,08/07/2017 19:35:42
+Edição: ,O funcionário: Wagner Andradefoi editado para: Wagner Andrade,(12)2222-2222,600.0,6690.0,Gerente,Síria,0,0,[Generoso, Assiduidade, Localidade],08/07/2017 19:35:50
+Visualização: ,Wagner Andrade foi visualizado! ,08/07/2017 19:35:55
+Edição: ,O funcionário: Wagner Andradefoi editado para: Wagner Andrade,(12)2222-2222,600.0,690.0,Gerente,Caribe,0,0,[Generoso, Assiduidade],08/07/2017 19:36:14
+Edição: ,O funcionário: Wagner Andradefoi editado para: Wagner Andrade,(12)2222-2222,600.0,882.0,Gerente,Caribe,0,2,[Generoso, Assiduidade, Dependentes],08/07/2017 19:36:53
+Visualização: ,Wagner Andrade foi visualizado! ,08/07/2017 19:36:57
+Edição: ,O funcionário: Wagner Andradefoi editado para: Wagner Andrade,(12)2222-2222,600.0,690.0,Gerente,Caribe,0,0,[Generoso, Assiduidade],08/07/2017 19:37:08
