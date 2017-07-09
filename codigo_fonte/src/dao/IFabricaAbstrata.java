@@ -2,8 +2,9 @@ package dao;
 
 /**
  *
- * @author wagner
+ * @author Wagner
  */
 public interface IFabricaAbstrata {
-    public IFuncionarioDAO criarFabricaMySQL();
+    public IFuncionarioDAO criaFabricaFuncionario();
+    public ILogDAO criaFabricaLog();
 }

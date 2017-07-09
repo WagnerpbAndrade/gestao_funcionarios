@@ -1,12 +1,7 @@
 package command;
 
-import chainBonus.BonusAssiduidadeHandler;
-import chainBonus.BonusDependentesHandler;
-import chainBonus.BonusGenerosoHandler;
-import chainBonus.BonusLocalidadeHandler;
-import chainBonus.BonusNormalHandler;
-import chainBonus.ITratador;
 import chainBonus.Processadora;
+import dao.IFabricaAbstrata;
 import factoryMethodDinamico.FabricaDAO;
 import funcionarios.collection.Funcionarios;
 import funcionarios.collection.Logs;
@@ -22,7 +17,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import dao.IFuncionarioDAO;
-import zelador.Zelador;
 
 /**
  *
@@ -33,16 +27,16 @@ public class EditarFuncionarioCommand implements IFuncionarioCommand {
     private Funcionarios funcionarios;
     private IncluirFuncionarioView view;
     private Funcionario funcionarioSelecionado;
+    private IFabricaAbstrata fabrica;
     private IFuncionarioDAO dao;
-    private Zelador zelador;
 
     public EditarFuncionarioCommand() {
 
         try {
 
             this.funcionarios = Funcionarios.getInstance();
-            this.dao = FabricaDAO.getInstance().create();
-            this.zelador = Zelador.getInstance();
+            this.fabrica = FabricaDAO.getInstance().create();
+            this.dao = this.fabrica.criaFabricaFuncionario();
 
         } catch (Exception ex) {
             Logger.getLogger(EditarFuncionarioCommand.class.getName()).log(Level.SEVERE, null, ex);

@@ -1,5 +1,6 @@
 package funcionarios.presenter;
 
+import dao.IFabricaAbstrata;
 import factoryMethodDinamico.FabricaDAO;
 import funcionarios.presenter.apoio.ComparadorDeTelefoneFuncionario;
 import java.awt.event.ActionEvent;
@@ -35,6 +36,7 @@ public final class ListarFuncionariosPresenter implements Observador {
     private Funcionarios funcionarios;
     private ListarFuncionariosView view;
     private IncluirFuncionarioPresenter presenter;
+    private IFabricaAbstrata fabrica;
     private IFuncionarioDAO dao;
 
     public ListarFuncionariosPresenter() {
@@ -64,7 +66,9 @@ public final class ListarFuncionariosPresenter implements Observador {
         this.view = new ListarFuncionariosView();
         this.funcionarios = Funcionarios.getInstance();
         this.funcionarios.addObservador(this);
-        this.dao = FabricaDAO.getInstance().create();
+        
+        this.fabrica = FabricaDAO.getInstance().create();
+        this.dao = this.fabrica.criaFabricaFuncionario();
 
         this.view.getCbOrdenarTelefone().addActionListener(new ActionListener() {
             @Override
@@ -138,11 +142,11 @@ public final class ListarFuncionariosPresenter implements Observador {
         this.view.setResizable(false);
         this.view.setVisible(true);
     }
-    
+
     private void setDimension() {
         Dimension d = PrincipalPresenter.getInstance().getView().getjDesktopPanePrincipalView().getSize();
 
-        this.view.setLocation( (d.width - this.view.getSize().width) / 2, (d.height - this.view.getSize().height) / 2);
+        this.view.setLocation((d.width - this.view.getSize().width) / 2, (d.height - this.view.getSize().height) / 2);
     }
 
     private void ordenaTelefone() throws Exception {

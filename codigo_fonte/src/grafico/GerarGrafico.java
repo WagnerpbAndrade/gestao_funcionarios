@@ -1,5 +1,6 @@
 package grafico;
 
+import dao.IFabricaAbstrata;
 import dao.IFuncionarioDAO;
 import factoryMethodDinamico.FabricaDAO;
 import java.util.logging.Level;
@@ -22,6 +23,7 @@ public class GerarGrafico {
     private boolean legenda;
     private boolean tooltips;
     private boolean urls;
+    private IFabricaAbstrata fabrica;
     private IFuncionarioDAO dao;
     private double salarioB, salarioC, salarioS;
     
@@ -36,7 +38,8 @@ public class GerarGrafico {
         
         try {
             
-            this.dao = FabricaDAO.getInstance().create();
+            this.fabrica = FabricaDAO.getInstance().create();
+            this.dao = this.fabrica.criaFabricaFuncionario();
             
         } catch (Exception ex) {
             Logger.getLogger(GerarGrafico.class.getName()).log(Level.SEVERE, null, ex);

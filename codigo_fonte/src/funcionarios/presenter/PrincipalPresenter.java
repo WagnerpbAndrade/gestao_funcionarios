@@ -1,6 +1,7 @@
 package funcionarios.presenter;
 
 import configuracao.Configuracao;
+import dao.IFabricaAbstrata;
 import dao.ILogDAO;
 import factoryMethodDinamico.FabricaDAO;
 import factoryMethodDinamicoLog.FabricaLogDAO;
@@ -34,9 +35,9 @@ public class PrincipalPresenter implements Observador {
     private PrincipalView view;
     private Funcionarios funcionarios;
     private static PrincipalPresenter INSTANCE = null;
-    private FabricaDAO fabricaDAO;
+    private IFabricaAbstrata fabrica;
     private IFuncionarioDAO dao;
-    private FabricaLogDAO fabricaLogDAO;
+    private IFabricaAbstrata fabricaLog;
     private ILogDAO logDAO;
     private Configuracao configuracao;
 
@@ -67,14 +68,14 @@ public class PrincipalPresenter implements Observador {
         
         this.configuracao = Configuracao.getInstance();
 
-        this.fabricaDAO = FabricaDAO.getInstance();
-        this.dao = this.fabricaDAO.create();
+        this.fabrica = FabricaDAO.getInstance().create();
+        this.dao = this.fabrica.criaFabricaFuncionario();
 
         this.funcionarios = Funcionarios.getInstance();
         this.funcionarios.addObservador(this);
 
-        this.fabricaLogDAO = FabricaLogDAO.getInstance();
-        this.logDAO = fabricaLogDAO.create();
+        this.fabricaLog = FabricaLogDAO.getInstance().create();
+        this.logDAO = fabricaLog.criaFabricaLog();
 
         this.view.getjMenuItemAdicionarFuncionario().addActionListener(new ActionListener() {
             @Override
@@ -226,7 +227,7 @@ public class PrincipalPresenter implements Observador {
 
     private void miLogTxt() throws Exception {
 
-        this.configuracao.setValor("log", "LogTxtDAO");
+        this.configuracao.setValor("log", "TxtDAO");
 
         //Gerar Log
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
@@ -238,7 +239,7 @@ public class PrincipalPresenter implements Observador {
 
     private void miLogMySQL() throws Exception {
 
-        this.configuracao.setValor("log", "LogMySQL");
+        this.configuracao.setValor("log", "MySQLDAO");
 
         //Gerar Log
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");

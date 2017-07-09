@@ -1,5 +1,6 @@
-package dao;
+package daoTxt;
 
+import dao.IFuncionarioDAO;
 import memento.Funcionario;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -9,19 +10,27 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Scanner;
 import java.util.TreeSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author wagner
  */
-public class TxtDAO implements IFuncionarioDAO {
+public class FuncionarioTxtDAO implements IFuncionarioDAO {
 
     private final File arquivo;
 
-    public TxtDAO() throws IOException {
+    public FuncionarioTxtDAO()  {
         this.arquivo = new File("src/funcionarios/data/funcionarios.txt");
         if(!this.arquivo.exists())
-            this.arquivo.createNewFile();
+            try {
+                
+                this.arquivo.createNewFile();
+                
+        } catch (IOException ex) {
+            Logger.getLogger(FuncionarioTxtDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override

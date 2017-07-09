@@ -1,6 +1,7 @@
 package factoryMethodDinamico;
 
 import configuracao.Configuracao;
+import dao.IFabricaAbstrata;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -11,7 +12,7 @@ import dao.IFuncionarioDAO;
 
 /**
  *
- * @author wagner
+ * @author Wagner
  */
 public final class FabricaDAO {
     
@@ -43,19 +44,19 @@ public final class FabricaDAO {
         this.modeloDAO.load(new FileInputStream("src/factoryMethodDinamico/commands.properties"));
     }
     
-    public IFuncionarioDAO create() throws Exception{
-        IFuncionarioDAO dao = null;
+    public IFabricaAbstrata create() throws Exception{
+        IFabricaAbstrata fabrica = null;
         
         try {
             this.nomeDAO = this.modeloDAO.getProperty(Configuracao.getInstance().getValor("persistencia"));
             Class classe = Class.forName(this.nomeDAO);
             Object object = classe.newInstance();
-            dao = (IFuncionarioDAO) object;
+            fabrica = (IFabricaAbstrata) object;
         } catch (Exception e) {
             throw new Exception("Esse modelo de persistência não existe!");
         }
         
-        return dao;
+        return fabrica;
     }
     
     

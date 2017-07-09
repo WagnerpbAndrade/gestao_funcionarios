@@ -1,6 +1,7 @@
-package dao;
+package daoMySQL;
 
 import conexao.AbstractMySQL;
+import dao.ILogDAO;
 import funcionarios.model.Log;
 import java.util.ArrayList;
 

@@ -1,7 +1,7 @@
 package factoryMethodDinamicoLog;
 
 import configuracao.Configuracao;
-import dao.ILogDAO;
+import dao.IFabricaAbstrata;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -43,18 +43,18 @@ public final class FabricaLogDAO {
         this.modeloDAO.load(new FileInputStream("src/factoryMethodDinamicoLog/commands.properties"));
     }
    
-    public ILogDAO create() throws Exception {
-        ILogDAO dao = null;
+    public IFabricaAbstrata create() throws Exception {
+        IFabricaAbstrata fabrica = null;
 
         try {
             this.nomeDAO = this.modeloDAO.getProperty(Configuracao.getInstance().getValor("log"));
             Class classe = Class.forName(this.nomeDAO);
             Object object = classe.newInstance();
-            dao = (ILogDAO) object;
+            fabrica = (IFabricaAbstrata) object;
         } catch (Exception e) {
             throw new Exception("Esse modelo de persistência não existe!");
         }
 
-        return dao;
+        return fabrica;
     }
 }

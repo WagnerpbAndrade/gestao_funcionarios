@@ -1,7 +1,8 @@
-package dao;
+package daoMySQL;
 
 import conexao.AbstractMySQL;
 import conexao.ConexaoMySQL;
+import dao.IFuncionarioDAO;
 import memento.Funcionario;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -14,7 +15,7 @@ import java.util.TreeSet;
  *
  * @author wagner
  */
-public class MySQLDAO extends AbstractMySQL implements IFuncionarioDAO {
+public class FuncionarioMySQLDAO extends AbstractMySQL implements IFuncionarioDAO {
 
     @Override
     public void inserir(Funcionario f) throws Exception {

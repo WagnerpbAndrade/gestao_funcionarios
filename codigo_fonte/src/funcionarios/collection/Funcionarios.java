@@ -1,5 +1,6 @@
 package funcionarios.collection;
 
+import dao.IFabricaAbstrata;
 import factoryMethodDinamico.FabricaDAO;
 import java.util.Iterator;
 import java.util.TreeSet;
@@ -18,12 +19,14 @@ public final class Funcionarios implements Observado {
     private static Funcionarios INSTANCE = null;
     private ArrayList<Observador> observadores = null;
     private Funcionario funcionarioSelecionado;
+    private IFabricaAbstrata fabrica;
     private IFuncionarioDAO dao;
 
     private Funcionarios() {
         try {
 
-            this.dao = FabricaDAO.getInstance().create();
+            this.fabrica = FabricaDAO.getInstance().create();
+            this.dao = this.fabrica.criaFabricaFuncionario();
 
             this.funcionarios = this.dao.getAll();
 

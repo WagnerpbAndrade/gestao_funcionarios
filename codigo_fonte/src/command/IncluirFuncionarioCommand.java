@@ -1,12 +1,8 @@
 package command;
 
-import chainBonus.BonusAssiduidadeHandler;
-import chainBonus.BonusDependentesHandler;
-import chainBonus.BonusGenerosoHandler;
-import chainBonus.BonusLocalidadeHandler;
-import chainBonus.BonusNormalHandler;
-import chainBonus.ITratador;
 import chainBonus.Processadora;
+import dao.IFabricaAbstrata;
+import dao.IFuncionarioDAO;
 import factoryMethodDinamico.FabricaDAO;
 import funcionarios.collection.Logs;
 import memento.Funcionario;
@@ -19,7 +15,6 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import dao.IFuncionarioDAO;
 import funcionarios.collection.Funcionarios;
 import state.EdicaoFuncionarioState;
 import zelador.Zelador;
@@ -31,8 +26,8 @@ import zelador.Zelador;
 public class IncluirFuncionarioCommand implements IFuncionarioCommand {
 
     private IncluirFuncionarioView view;
+    private IFabricaAbstrata fabrica;
     private IFuncionarioDAO dao;
-    private ITratador tratador;
     private Zelador zelador;
     private Funcionario f;
     private Funcionarios funcionarios;
@@ -41,7 +36,8 @@ public class IncluirFuncionarioCommand implements IFuncionarioCommand {
 
         try {
 
-            this.dao = FabricaDAO.getInstance().create();
+            this.fabrica = FabricaDAO.getInstance().create();
+            this.dao = this.fabrica.criaFabricaFuncionario();
             this.zelador = Zelador.getInstance();
             this.funcionarios = Funcionarios.getInstance();
 
