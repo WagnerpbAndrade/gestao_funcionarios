@@ -8,9 +8,9 @@ import funcionarios.presenter.PrincipalPresenter;
  */
 public class Main {
 
-    public static void main(String args[]) 
-    {
+    public static void main(String args[]) {
+
         PrincipalPresenter.getInstance();
-       
+        
     }
 }

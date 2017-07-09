@@ -1,5 +1,6 @@
 package funcionarios.presenter;
 
+import configuracao.Configuracao;
 import dao.ILogDAO;
 import factoryMethodDinamico.FabricaDAO;
 import factoryMethodDinamicoLog.FabricaLogDAO;
@@ -37,6 +38,7 @@ public class PrincipalPresenter implements Observador {
     private IFuncionarioDAO dao;
     private FabricaLogDAO fabricaLogDAO;
     private ILogDAO logDAO;
+    private Configuracao configuracao;
 
     private PrincipalPresenter() {
 
@@ -62,6 +64,8 @@ public class PrincipalPresenter implements Observador {
 
     private void configuraTela() throws FileNotFoundException, Exception {
         this.view = new PrincipalView();
+        
+        this.configuracao = Configuracao.getInstance();
 
         this.fabricaDAO = FabricaDAO.getInstance();
         this.dao = this.fabricaDAO.create();
@@ -222,7 +226,7 @@ public class PrincipalPresenter implements Observador {
 
     private void miLogTxt() throws Exception {
 
-        this.fabricaLogDAO.atualizarLogSalvo("LogTxtDAO");
+        this.configuracao.setValor("log", "LogTxtDAO");
 
         //Gerar Log
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
@@ -234,7 +238,7 @@ public class PrincipalPresenter implements Observador {
 
     private void miLogMySQL() throws Exception {
 
-        this.fabricaLogDAO.atualizarLogSalvo("LogMySQL");
+        this.configuracao.setValor("log", "LogMySQL");
 
         //Gerar Log
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
@@ -246,7 +250,7 @@ public class PrincipalPresenter implements Observador {
 
     private void miPersistenciaTxt() throws Exception {
 
-        this.fabricaDAO.atualizarPersistenciaSalva("TxtDAO");
+        this.configuracao.setValor("persistencia", "TxtDAO");
 
         //Gerar Log
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
@@ -258,7 +262,8 @@ public class PrincipalPresenter implements Observador {
     }
 
     private void miPersistenciaMySQL() throws Exception {
-        this.fabricaDAO.atualizarPersistenciaSalva("MySQLDAO");
+        
+        this.configuracao.setValor("persistencia", "MySQLDAO");
 
         //Gerar Log
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");

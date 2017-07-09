@@ -39,3 +39,9 @@ Edição: ,O funcionário: Wagner Andradefoi editado para: Wagner Andrade,(12)22
 Edição: ,O funcionário: Wagner Andradefoi editado para: Wagner Andrade,(12)2222-2222,600.0,882.0,Gerente,Caribe,0,2,[Generoso, Assiduidade, Dependentes],08/07/2017 19:36:53
 Visualização: ,Wagner Andrade foi visualizado! ,08/07/2017 19:36:57
 Edição: ,O funcionário: Wagner Andradefoi editado para: Wagner Andrade,(12)2222-2222,600.0,690.0,Gerente,Caribe,0,0,[Generoso, Assiduidade],08/07/2017 19:37:08
+Persistência de dados: , Alterado para TxtDAO ,09/07/2017 00:21:05
+Persistência de dados: , Alterado para MySQLDAO ,09/07/2017 00:21:29
+Persistência Log: , Alterado para LogMySQL ,09/07/2017 00:21:41
+Persistência Log: , Alterado para LogTxtDAO ,09/07/2017 00:21:45
+Persistência de dados: , Alterado para TxtDAO ,09/07/2017 00:21:49
+Persistência de dados: , Alterado para MySQLDAO ,09/07/2017 00:21:53
