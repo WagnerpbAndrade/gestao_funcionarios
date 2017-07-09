@@ -189,12 +189,7 @@ public class IncluirFuncionarioCommand implements IFuncionarioCommand {
 
         p.processar();
     }
-
-    @Override
-    public void desfazer(IncluirFuncionarioPresenter presenter) {
-
-    }
-
+    
     private void btnDesfazer(IncluirFuncionarioPresenter presenter) throws Exception {
         if (this.zelador.getQtdEstados() <= 0) {
             throw new Exception("Nenhum estado salvo!");

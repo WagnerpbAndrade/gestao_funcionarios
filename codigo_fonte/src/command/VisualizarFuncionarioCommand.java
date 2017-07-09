@@ -106,9 +106,4 @@ public class VisualizarFuncionarioCommand implements IFuncionarioCommand {
         this.view.dispose();
     }
 
-    @Override
-    public void desfazer(IncluirFuncionarioPresenter presenter) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 }
