@@ -45,3 +45,7 @@ Persistência Log: , Alterado para LogMySQL ,09/07/2017 00:21:41
 Persistência Log: , Alterado para LogTxtDAO ,09/07/2017 00:21:45
 Persistência de dados: , Alterado para TxtDAO ,09/07/2017 00:21:49
 Persistência de dados: , Alterado para MySQLDAO ,09/07/2017 00:21:53
+Insersão: ,Teste3 foi cadastrado!,09/07/2017 00:42:54
+Visualização: ,Teste3 foi visualizado! ,09/07/2017 00:43:01
+Edição: ,O funcionário: Teste3foi editado para: Teste3,(22)2222-2222,230.0,456.5,Gerente,Brasil,10,2,[Generoso, Localidade, Dependentes],09/07/2017 00:43:14
+Visualização: ,Teste3 foi visualizado! ,09/07/2017 00:43:19

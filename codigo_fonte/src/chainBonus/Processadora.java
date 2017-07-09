@@ -1,6 +1,7 @@
 package chainBonus;
 
 import java.util.ArrayList;
+import memento.Funcionario;
 
 /**
  *
@@ -10,8 +11,13 @@ public class Processadora {
 
     protected ArrayList<ITratador> tratadores;
 
-    public Processadora() {
+    public Processadora(Funcionario f) {
         this.tratadores = new ArrayList<>();
+        this.tratadores.add(new BonusNormalHandler(f));
+        this.tratadores.add(new BonusGenerosoHandler(f));
+        this.tratadores.add(new BonusAssiduidadeHandler(f));
+        this.tratadores.add( new BonusLocalidadeHandler(f));
+        this.tratadores.add(new BonusDependentesHandler(f));
     }
 
     public void addTratador(ITratador t) {

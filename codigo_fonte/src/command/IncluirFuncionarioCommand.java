@@ -174,19 +174,9 @@ public class IncluirFuncionarioCommand implements IFuncionarioCommand {
     }
 
     private void tratarBonus(Funcionario f) {
-        ITratador normal = new BonusNormalHandler(f);
-        ITratador generoso = new BonusGenerosoHandler(f);
-        ITratador assiduidade = new BonusAssiduidadeHandler(f);
-        ITratador localidade = new BonusLocalidadeHandler(f);
-        ITratador dependentes = new BonusDependentesHandler(f);
 
-        Processadora p = new Processadora();
-        p.addTratador(normal);
-        p.addTratador(generoso);
-        p.addTratador(assiduidade);
-        p.addTratador(localidade);
-        p.addTratador(dependentes);
-
+        Processadora p = new Processadora(f);
+        
         p.processar();
     }
     
