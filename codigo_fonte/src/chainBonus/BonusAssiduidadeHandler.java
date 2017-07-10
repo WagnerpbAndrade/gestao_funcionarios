@@ -1,6 +1,6 @@
 package chainBonus;
 
-import funcionarios.model.Funcionario;
+import funcionarios.model.AbstractFuncionario;
 
 /**
  *
@@ -8,9 +8,9 @@ import funcionarios.model.Funcionario;
  */
 public class BonusAssiduidadeHandler implements ITratador {
 
-    private Funcionario funcionario;
+    private AbstractFuncionario funcionario;
 
-    public BonusAssiduidadeHandler(Funcionario funcionario) {
+    public BonusAssiduidadeHandler(AbstractFuncionario funcionario) {
         this.funcionario = funcionario;
     }
 

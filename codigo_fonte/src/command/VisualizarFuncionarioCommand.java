@@ -2,7 +2,7 @@ package command;
 
 import funcionarios.collection.Funcionarios;
 import funcionarios.collection.Logs;
-import funcionarios.model.Funcionario;
+import funcionarios.model.AbstractFuncionario;
 import funcionarios.model.Log;
 import funcionarios.presenter.BonusPresenter;
 import funcionarios.presenter.IncluirFuncionarioPresenter;
@@ -21,7 +21,7 @@ public class VisualizarFuncionarioCommand implements IFuncionarioCommand {
 
     private IncluirFuncionarioView view;
     private Funcionarios funcionarios;
-    private Funcionario funcionario;
+    private AbstractFuncionario funcionario;
 
     public VisualizarFuncionarioCommand() {
 

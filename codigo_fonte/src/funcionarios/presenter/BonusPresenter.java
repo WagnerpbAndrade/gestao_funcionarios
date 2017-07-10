@@ -1,7 +1,7 @@
 package funcionarios.presenter;
 
+import funcionarios.model.AbstractFuncionario;
 import funcionarios.collection.Funcionarios;
-import funcionarios.model.Funcionario;
 import funcionarios.view.BonusView;
 import java.util.Iterator;
 import javax.swing.table.DefaultTableModel;
@@ -55,7 +55,7 @@ public class BonusPresenter {
     }
 
     private void carregarTabela() {
-        Funcionario funcionarioSelecionado = Funcionarios.getInstance().getFuncionarioSelecionado();
+        AbstractFuncionario funcionarioSelecionado = Funcionarios.getInstance().getFuncionarioSelecionado();
         tm.setNumRows(0);
 
         Iterator<String> it = funcionarioSelecionado.getBonus().iterator();

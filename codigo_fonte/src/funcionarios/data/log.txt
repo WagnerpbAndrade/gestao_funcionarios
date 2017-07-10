@@ -1,3 +1,11 @@
 Persistência Log: , Alterado para LogTxtDAO ,09/07/2017 13:28:32
 Insersão: ,ddddddddddd foi cadastrado!,09/07/2017 13:29:19
 Visualização: ,Paulo Andrade foi visualizado! ,10/07/2017 15:46:26
+Visualização: ,akakak foi visualizado! ,10/07/2017 15:52:42
+Insersão: ,Wagner testando abstract foi cadastrado!,10/07/2017 16:16:35
+Visualização: ,Wagner testando abstract foi visualizado! ,10/07/2017 16:16:53
+Edição: ,O funcionário: Wagner testando abstractfoi editado para: Wagner testando,(22)2222-2222,2.0,194.34,Gerente,Brasil,2,2,[Generoso, Assiduidade, Localidade, Dependentes],10/07/2017 16:17:25
+Insersão: ,testando denovo foi cadastrado!,10/07/2017 16:37:06
+Visualização: ,Wagner testando foi visualizado! ,10/07/2017 17:20:02
+Insersão: ,teaafsfae foi cadastrado!,10/07/2017 17:25:24
+Insersão: ,abababa foi cadastrado!,10/07/2017 17:25:53

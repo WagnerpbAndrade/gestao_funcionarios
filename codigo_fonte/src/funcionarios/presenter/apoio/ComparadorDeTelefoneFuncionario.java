@@ -5,16 +5,16 @@
 
 package funcionarios.presenter.apoio;
 
+import funcionarios.model.AbstractFuncionario;
 import java.util.Comparator;
-import funcionarios.model.Funcionario;
 
 /**
  *
  * @author Clayton
  */
-public class ComparadorDeTelefoneFuncionario implements Comparator<Funcionario> {
+public class ComparadorDeTelefoneFuncionario implements Comparator<AbstractFuncionario> {
    @Override
-   public int compare(Funcionario aPerson, Funcionario anotherPerson) {
+   public int compare(AbstractFuncionario aPerson, AbstractFuncionario anotherPerson) {
       return aPerson.getTelefone().compareTo(anotherPerson.getTelefone());
    }   
 }

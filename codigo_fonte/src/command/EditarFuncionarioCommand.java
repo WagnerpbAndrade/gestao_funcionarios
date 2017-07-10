@@ -1,6 +1,7 @@
 package command;
 
 import chainBonus.Processadora;
+import funcionarios.model.AbstractFuncionario;
 import dao.IFabricaAbstrata;
 import factoryMethodDinamico.FabricaDAO;
 import funcionarios.collection.Funcionarios;
@@ -26,7 +27,7 @@ public class EditarFuncionarioCommand implements IFuncionarioCommand {
 
     private Funcionarios funcionarios;
     private IncluirFuncionarioView view;
-    private Funcionario funcionarioSelecionado;
+    private AbstractFuncionario funcionarioSelecionado;
     private IFabricaAbstrata fabrica;
     private IFuncionarioDAO dao;
 
@@ -103,7 +104,7 @@ public class EditarFuncionarioCommand implements IFuncionarioCommand {
         this.view.dispose();
     }
 
-    private void btnSalvar(Funcionario funcionario) throws Exception {
+    private void btnSalvar(AbstractFuncionario funcionario) throws Exception {
 
         String nome = this.view.getTxtNome().getText();
         String telefone = this.view.getTxtTelefone().getText();
@@ -147,7 +148,7 @@ public class EditarFuncionarioCommand implements IFuncionarioCommand {
                 throw new Exception("Infome um número de dependentes válido!");
             }
 
-            Funcionario funcionarioEditado = new Funcionario(nome, telefone, salarioConvertido, salarioConvertido, cargo, regiao, bonus, faltas, dependentes);
+            AbstractFuncionario funcionarioEditado = new Funcionario(nome, telefone, salarioConvertido, salarioConvertido, cargo, regiao, bonus, faltas, dependentes);
 
             tratarBonus(funcionarioEditado);
 
@@ -174,10 +175,10 @@ public class EditarFuncionarioCommand implements IFuncionarioCommand {
         }
     }
 
-    private void editarFuncionario(Funcionario f) throws Exception {
-        TreeSet<Funcionario> funcs = this.dao.getAll();
+    private void editarFuncionario(AbstractFuncionario f) throws Exception {
+        TreeSet<AbstractFuncionario> funcs = this.dao.getAll();
 
-        for (Funcionario funcionario : funcs) {
+        for (AbstractFuncionario funcionario : funcs) {
             if (funcionario.compareTo(this.funcionarioSelecionado) == 0) {
                 funcs.remove(funcionario);
                 break;
@@ -190,7 +191,7 @@ public class EditarFuncionarioCommand implements IFuncionarioCommand {
 
     }
 
-    private void tratarBonus(Funcionario f) {
+    private void tratarBonus(AbstractFuncionario f) {
         
         Processadora p = new Processadora(f);
         
@@ -203,7 +204,7 @@ public class EditarFuncionarioCommand implements IFuncionarioCommand {
 
         this.view = presenter.getView();
 
-        Funcionario f = this.funcionarios.getFuncionarioSelecionado();
+        AbstractFuncionario f = this.funcionarios.getFuncionarioSelecionado();
 
         this.view.getjButtonDesfazer().setVisible(false);
 

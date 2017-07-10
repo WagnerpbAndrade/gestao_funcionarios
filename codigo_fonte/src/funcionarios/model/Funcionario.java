@@ -1,71 +1,29 @@
 package funcionarios.model;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class Funcionario implements Comparable<Funcionario> {
+public class Funcionario extends AbstractFuncionario implements Comparable<AbstractFuncionario> {
 
-    private int id;
-    private String nome;
-    private String telefone;
-    private double salarioBase;
-    private double salarioComBonus;
-    private String cargo;
-    private String regiao;
-    private int assiduidade;
-    private int numeroDependentes;
-    private DecimalFormat df;
-    private ArrayList<String> bonus;
+    
 
     public Funcionario(String pNome, String pTelefone, double salario, double salarioComBonus, String cargo, String regiao, String bonus, int assiduidade, int numeroDependentes) {
-        this.df = new DecimalFormat("0.00");
-        this.id = 0;
-        this.bonus = new ArrayList<>();
-        this.nome = pNome;
-        this.telefone = pTelefone;
-        this.salarioBase = salario;
-        this.salarioComBonus = salarioComBonus;
-        this.cargo = cargo;
-        this.regiao = regiao;
-        this.bonus.add(bonus);
-        this.assiduidade = assiduidade;
-        this.numeroDependentes = numeroDependentes;
+        super(pNome, pTelefone, salario, salarioComBonus, cargo, regiao, bonus, assiduidade, numeroDependentes);
     }
 
     public Funcionario(String pNome, String pTelefone, double salario, double salarioComBonus, String cargo, String regiao, ArrayList<String> bonus, int assiduidade, int numeroDependentes) {
-        this.df = new DecimalFormat("0.00");
-        this.bonus = new ArrayList<>();
-        this.nome = pNome;
-        this.telefone = pTelefone;
-        this.salarioBase = salario;
-        this.salarioComBonus = salarioComBonus;
-        this.cargo = cargo;
-        this.regiao = regiao;
-        this.bonus = bonus;
-        this.assiduidade = assiduidade;
-        this.numeroDependentes = numeroDependentes;
+        super(pNome, pTelefone, salario, salarioComBonus, cargo, regiao, bonus, assiduidade, numeroDependentes);
     }
     
     public Funcionario(int id, String pNome, String pTelefone, double salario, double salarioComBonus, String cargo, String regiao, ArrayList<String> bonus, int assiduidade, int numeroDependentes) {
-        this.df = new DecimalFormat("0.00");
-        this.id = id;
-        this.bonus = new ArrayList<>();
-        this.nome = pNome;
-        this.telefone = pTelefone;
-        this.salarioBase = salario;
-        this.salarioComBonus = salarioComBonus;
-        this.cargo = cargo;
-        this.regiao = regiao;
-        this.bonus = bonus;
-        this.assiduidade = assiduidade;
-        this.numeroDependentes = numeroDependentes;
+        super(id, pNome, pTelefone, salario, salarioComBonus, cargo, regiao, bonus, assiduidade, numeroDependentes);
     }
     
+    @Override
     public FuncionarioMemento getMemento(){
         return new FuncionarioMemento(id, nome, telefone, salarioBase, salarioComBonus, cargo, regiao, assiduidade, numeroDependentes, bonus);
     }
     
-    public Funcionario restaurar(FuncionarioMemento memento){
+    public AbstractFuncionario restaurar(FuncionarioMemento memento){
         this.id = memento.getId();
         this.nome = memento.getNome();
         this.telefone = memento.getTelefone();
@@ -77,14 +35,15 @@ public class Funcionario implements Comparable<Funcionario> {
         this.numeroDependentes = memento.getNumeroDependentes();
         this.bonus = memento.getBonus();
         
-        
         return this;
     }
 
+    @Override
     public int getId() {
         return id;
     }
 
+    @Override
     public void setId(int id) {
         this.id = id;
     }
@@ -97,18 +56,22 @@ public class Funcionario implements Comparable<Funcionario> {
         return telefone;
     }
 
+    @Override
     public double getSalarioBase() {
         return salarioBase;
     }
 
+    @Override
     public String getCargo() {
         return cargo;
     }
 
+    @Override
     public String getRegiao() {
         return regiao;
     }
 
+    @Override
     public double getSalarioComBonus() {
         return salarioComBonus;
     }

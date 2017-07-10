@@ -1,10 +1,10 @@
 package funcionarios.collection;
 
+import funcionarios.model.AbstractFuncionario;
 import dao.IFabricaAbstrata;
 import factoryMethodDinamico.FabricaDAO;
 import java.util.Iterator;
 import java.util.TreeSet;
-import funcionarios.model.Funcionario;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.logging.Level;
@@ -15,10 +15,10 @@ import dao.IFuncionarioDAO;
 
 public final class Funcionarios implements Observado {
 
-    private TreeSet<Funcionario> funcionarios = null;
+    private TreeSet<AbstractFuncionario> funcionarios = null;
     private static Funcionarios INSTANCE = null;
     private ArrayList<Observador> observadores = null;
-    private Funcionario funcionarioSelecionado;
+    private AbstractFuncionario funcionarioSelecionado;
     private IFabricaAbstrata fabrica;
     private IFuncionarioDAO dao;
 
@@ -45,7 +45,7 @@ public final class Funcionarios implements Observado {
         return INSTANCE;
     }
 
-    public void add(Funcionario f) throws Exception {
+    public void add(AbstractFuncionario f) throws Exception {
 
         this.dao.inserir(f);
 
@@ -53,13 +53,13 @@ public final class Funcionarios implements Observado {
 
     }
     
-    public void atualizarStatus(Funcionario f) throws Exception{
+    public void atualizarStatus(AbstractFuncionario f) throws Exception{
         this.dao.atualizarStatus(f);
         
         notificar();
     }
 
-    public void editarFuncionario(Collection<Funcionario> c, Funcionario f) throws Exception {
+    public void editarFuncionario(Collection<AbstractFuncionario> c, AbstractFuncionario f) throws Exception {
 
         this.dao.editarFuncionario(c, f);
 
@@ -67,17 +67,17 @@ public final class Funcionarios implements Observado {
 
     }
     
-    public void removerFuncionario(Collection<Funcionario> c, Funcionario f) throws Exception{
+    public void removerFuncionario(Collection<AbstractFuncionario> c, AbstractFuncionario f) throws Exception{
         this.dao.removerFuncionario(c, f);
         
         notificar();
     }
 
-    public TreeSet<Funcionario> getTreeSet() throws Exception {
+    public TreeSet<AbstractFuncionario> getTreeSet() throws Exception {        
         return funcionarios;
     }
 
-    public Iterator<Funcionario> iterator() {
+    public Iterator<AbstractFuncionario> iterator() {
         return this.funcionarios.iterator();
     }
 
@@ -102,18 +102,18 @@ public final class Funcionarios implements Observado {
         }
     }
 
-    public Funcionario getFuncionarioSelecionado() {
+    public AbstractFuncionario getFuncionarioSelecionado() {
         return funcionarioSelecionado;
     }
 
-    public void setFuncionarioSelecionado(Funcionario funcionarioSelecionado) {
+    public void setFuncionarioSelecionado(AbstractFuncionario funcionarioSelecionado) {
         this.funcionarioSelecionado = funcionarioSelecionado;
     }
 
-    public Funcionario getFuncionarioByNome(String nome) {
+    public AbstractFuncionario getFuncionarioByNome(String nome) {
         try {
 
-            for (Funcionario f : this.dao.getAll()) {
+            for (AbstractFuncionario f : this.dao.getAll()) {
                 if (f.getNome().equalsIgnoreCase(nome)) {
                     return f;
                 }

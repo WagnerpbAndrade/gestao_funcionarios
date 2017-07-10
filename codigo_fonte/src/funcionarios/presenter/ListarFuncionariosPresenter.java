@@ -1,5 +1,6 @@
 package funcionarios.presenter;
 
+import funcionarios.model.AbstractFuncionario;
 import dao.IFabricaAbstrata;
 import factoryMethodDinamico.FabricaDAO;
 import funcionarios.presenter.apoio.ComparadorDeTelefoneFuncionario;
@@ -12,7 +13,6 @@ import java.util.Collections;
 import java.util.Iterator;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import funcionarios.model.Funcionario;
 import funcionarios.collection.Funcionarios;
 import funcionarios.view.ListarFuncionariosView;
 import java.awt.event.MouseAdapter;
@@ -151,7 +151,7 @@ public final class ListarFuncionariosPresenter implements Observador {
 
     private void ordenaTelefone() throws Exception {
         if (view.getCbOrdenarTelefone().isSelected()) {
-            ArrayList<Funcionario> lista = new ArrayList<>(this.dao.getAll());
+            ArrayList<AbstractFuncionario> lista = new ArrayList<>(this.dao.getAll());
             Collections.sort(lista, new ComparadorDeTelefoneFuncionario());
             carregaFuncionarios(lista);
         } else {
@@ -167,7 +167,7 @@ public final class ListarFuncionariosPresenter implements Observador {
             int linhaSelecionada = tabela.getSelectedRow();
             String nomeFuncionario = (String) tabela.getValueAt(linhaSelecionada, 0);
 
-            Funcionario f = this.funcionarios.getFuncionarioByNome(nomeFuncionario);
+            AbstractFuncionario f = this.funcionarios.getFuncionarioByNome(nomeFuncionario);
             this.funcionarios.setFuncionarioSelecionado(f);
 
             presenter = new IncluirFuncionarioPresenter();
@@ -187,7 +187,7 @@ public final class ListarFuncionariosPresenter implements Observador {
             int linhaSelecionada = tabela.getSelectedRow();
             String nomeFuncionario = (String) tabela.getValueAt(linhaSelecionada, 0);
 
-            Funcionario f = this.funcionarios.getFuncionarioByNome(nomeFuncionario);
+            AbstractFuncionario f = this.funcionarios.getFuncionarioByNome(nomeFuncionario);
 
             this.funcionarios.setFuncionarioSelecionado(f);
 
@@ -210,7 +210,7 @@ public final class ListarFuncionariosPresenter implements Observador {
                 int linhaSelecionada = tabela.getSelectedRow();
                 String nomeFuncionario = (String) tabela.getValueAt(linhaSelecionada, 0);
 
-                Funcionario f = this.funcionarios.getFuncionarioByNome(nomeFuncionario);
+                AbstractFuncionario f = this.funcionarios.getFuncionarioByNome(nomeFuncionario);
 
                 this.funcionarios.removerFuncionario(this.dao.getAll(), f);
 
@@ -247,12 +247,12 @@ public final class ListarFuncionariosPresenter implements Observador {
         }
     }
 
-    private void carregaFuncionarios(Collection<Funcionario> c) throws Exception {
+    private void carregaFuncionarios(Collection<AbstractFuncionario> c) throws Exception {
         tm.setNumRows(0);
         if (c != null) {
-            Iterator<Funcionario> it = c.iterator();
+            Iterator<AbstractFuncionario> it = c.iterator();
             while (it.hasNext()) {
-                Funcionario f = it.next();
+                AbstractFuncionario f = it.next();
                 tm.addRow(new Object[]{f.getNome(), f.getTelefone(), f.getCargo(), f.getSalarioComBonus(), f.getAssiduidade(), f.getRegiao(), f.getNumeroDependentes()});
             }
         } else {

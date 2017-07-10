@@ -1,6 +1,7 @@
 package command;
 
 import chainBonus.Processadora;
+import funcionarios.model.AbstractFuncionario;
 import dao.IFabricaAbstrata;
 import dao.IFuncionarioDAO;
 import factoryMethodDinamico.FabricaDAO;
@@ -169,7 +170,7 @@ public class IncluirFuncionarioCommand implements IFuncionarioCommand {
 
     }
 
-    private void tratarBonus(Funcionario f) {
+    private void tratarBonus(AbstractFuncionario f) {
 
         Processadora p = new Processadora(f);
         
@@ -181,11 +182,11 @@ public class IncluirFuncionarioCommand implements IFuncionarioCommand {
             throw new Exception("Nenhum estado salvo!");
         }
 
-        Funcionario restaurado = f.restaurar(this.zelador.getUltimoSalvo());
+        ;
 
-        this.funcionarios.setFuncionarioSelecionado(restaurado);
+        this.funcionarios.setFuncionarioSelecionado(f.restaurar(this.zelador.getUltimoSalvo()));
 
-        this.funcionarios.atualizarStatus(restaurado);
+        this.funcionarios.atualizarStatus(f.restaurar(this.zelador.getUltimoSalvo()));
 
         presenter = new IncluirFuncionarioPresenter();
         presenter.setState(new EdicaoFuncionarioState(presenter));

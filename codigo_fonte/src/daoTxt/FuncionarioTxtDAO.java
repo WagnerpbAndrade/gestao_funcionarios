@@ -1,5 +1,6 @@
 package daoTxt;
 
+import funcionarios.model.AbstractFuncionario;
 import dao.IFuncionarioDAO;
 import funcionarios.model.Funcionario;
 import java.io.BufferedWriter;
@@ -34,7 +35,7 @@ public class FuncionarioTxtDAO implements IFuncionarioDAO {
     }
 
     @Override
-    public void inserir(Funcionario f) throws Exception {
+    public void inserir(AbstractFuncionario f) throws Exception {
 
         FileWriter w = new FileWriter(arquivo, true);
         BufferedWriter bf = new BufferedWriter(w);
@@ -45,8 +46,8 @@ public class FuncionarioTxtDAO implements IFuncionarioDAO {
     }
 
     @Override
-    public TreeSet<Funcionario> getAll() throws Exception {
-        TreeSet<Funcionario> funcionarios = new TreeSet<>();
+    public TreeSet<AbstractFuncionario> getAll() throws Exception {
+        TreeSet<AbstractFuncionario> funcionarios = new TreeSet<>();
 
         Scanner scan = new Scanner(arquivo);
         while (scan.hasNextLine()) {
@@ -64,7 +65,7 @@ public class FuncionarioTxtDAO implements IFuncionarioDAO {
                 int dependentes = Integer.parseInt(scanline.next());
                 String bonus = scanline.nextLine();
 
-                Funcionario f = new Funcionario(nome, telefone, salario, salarioComBonus, cargo, regiao, getBonus(bonus), assiduidade, dependentes);
+                AbstractFuncionario f = new Funcionario(nome, telefone, salario, salarioComBonus, cargo, regiao, getBonus(bonus), assiduidade, dependentes);
                 //System.out.println("getALL: " + f.toString());
                 funcionarios.add(f);
             }
@@ -75,12 +76,12 @@ public class FuncionarioTxtDAO implements IFuncionarioDAO {
     }
 
     @Override
-    public void editarFuncionario(Collection<Funcionario> c, Funcionario funcionario) throws Exception {
+    public void editarFuncionario(Collection<AbstractFuncionario> c, AbstractFuncionario funcionario) throws Exception {
 
         FileWriter w = new FileWriter(arquivo);
         BufferedWriter bf = new BufferedWriter(w);
 
-        for (Funcionario f : c) {
+        for (AbstractFuncionario f : c) {
             bf.write(f.toString());
             bf.newLine();
         }
@@ -105,8 +106,8 @@ public class FuncionarioTxtDAO implements IFuncionarioDAO {
     }
 
     @Override
-    public void removerFuncionario(Collection<Funcionario> c, Funcionario funcionario) throws Exception {
-        for(Funcionario f : c){
+    public void removerFuncionario(Collection<AbstractFuncionario> c, AbstractFuncionario funcionario) throws Exception {
+        for(AbstractFuncionario f : c){
             if( funcionario.equals(f))
                 c.remove(f);
             
@@ -116,7 +117,7 @@ public class FuncionarioTxtDAO implements IFuncionarioDAO {
         FileWriter w = new FileWriter(arquivo);
         BufferedWriter bf = new BufferedWriter(w);
 
-        for (Funcionario f : c) {
+        for (AbstractFuncionario f : c) {
             bf.write(f.toString());
             bf.newLine();
         }

@@ -2,6 +2,7 @@ package daoMySQL;
 
 import conexao.AbstractMySQL;
 import conexao.ConexaoMySQL;
+import funcionarios.model.AbstractFuncionario;
 import dao.IFuncionarioDAO;
 import funcionarios.model.Funcionario;
 import java.sql.Connection;
@@ -18,7 +19,7 @@ import java.util.TreeSet;
 public class FuncionarioMySQLDAO extends AbstractMySQL implements IFuncionarioDAO {
 
     @Override
-    public void inserir(Funcionario f) throws Exception {
+    public void inserir(AbstractFuncionario f) throws Exception {
 
         int idFuncionario = 0;
         String sql = "INSERT INTO funcionario (nome, telefone, salario, salarioBonus, assiduidade, cargo, regiao, dependentes) VALUES('"
@@ -62,8 +63,8 @@ public class FuncionarioMySQLDAO extends AbstractMySQL implements IFuncionarioDA
     }
 
     @Override
-    public TreeSet<Funcionario> getAll() throws Exception {
-        TreeSet<Funcionario> funcionarios = new TreeSet<>();
+    public TreeSet<AbstractFuncionario> getAll() throws Exception {
+        TreeSet<AbstractFuncionario> funcionarios = new TreeSet<>();
 
         Connection con = ConexaoMySQL.getInstance().getConexao();
         Statement stat = con.createStatement();
@@ -104,7 +105,7 @@ public class FuncionarioMySQLDAO extends AbstractMySQL implements IFuncionarioDA
     }
 
     @Override
-    public void editarFuncionario(Collection<Funcionario> c, Funcionario f) throws Exception {
+    public void editarFuncionario(Collection<AbstractFuncionario> c, AbstractFuncionario f) throws Exception {
 
         String query = "UPDATE funcionario SET "
                 + "nome = '" + f.getNome() + "',"
@@ -142,7 +143,7 @@ public class FuncionarioMySQLDAO extends AbstractMySQL implements IFuncionarioDA
     }
 
     @Override
-    public void removerFuncionario(Collection<Funcionario> c, Funcionario funcionario) throws Exception {
+    public void removerFuncionario(Collection<AbstractFuncionario> c, AbstractFuncionario funcionario) throws Exception {
 
         String sql = "DELETE FROM funcionario WHERE idFuncionario = '" + funcionario.getId() + "'";
 
@@ -150,7 +151,7 @@ public class FuncionarioMySQLDAO extends AbstractMySQL implements IFuncionarioDA
     }
 
     @Override
-    public void atualizarStatus(Funcionario f) throws Exception {
+    public void atualizarStatus(AbstractFuncionario f) throws Exception {
 
         System.out.println("id: " + f.getId());
 

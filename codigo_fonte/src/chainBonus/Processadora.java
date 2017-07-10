@@ -1,7 +1,7 @@
 package chainBonus;
 
+import funcionarios.model.AbstractFuncionario;
 import java.util.ArrayList;
-import funcionarios.model.Funcionario;
 
 /**
  *
@@ -11,7 +11,7 @@ public class Processadora {
 
     protected ArrayList<ITratador> tratadores;
 
-    public Processadora(Funcionario f) {
+    public Processadora(AbstractFuncionario f) {
         this.tratadores = new ArrayList<>();
         this.tratadores.add(new BonusNormalHandler(f));
         this.tratadores.add(new BonusGenerosoHandler(f));

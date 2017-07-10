@@ -1,11 +1,11 @@
 package grafico;
 
+import funcionarios.model.AbstractFuncionario;
 import dao.IFabricaAbstrata;
 import dao.IFuncionarioDAO;
 import factoryMethodDinamico.FabricaDAO;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import funcionarios.model.Funcionario;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
@@ -78,7 +78,7 @@ public class GerarGrafico {
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         
         try {
-            for(Funcionario f: this.dao.getAll()){
+            for(AbstractFuncionario f: this.dao.getAll()){
                 if(f.getRegiao().equals("Brasil"))
                     salarioB += f.getSalarioComBonus();
                 else if (f.getRegiao().equals("Caribe"))
