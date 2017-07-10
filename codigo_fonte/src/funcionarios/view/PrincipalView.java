@@ -37,22 +37,6 @@ public class PrincipalView extends javax.swing.JFrame {
         return jLabelTotalCadastrado;
     }
 
-    public JMenuItem getjMenuItemPersistenciaMySQL() {
-        return jMenuItemPersistenciaMySQL;
-    }
-
-    public JMenuItem getjMenuItemPersistenciaTxt() {
-        return jMenuItemPersistenciaTxt;
-    }
-
-    public JMenuItem getjMenuItemLogMySQL() {
-        return jMenuItemLogMySQL;
-    }
-
-    public JMenuItem getjMenuItemLogTxt() {
-        return jMenuItemLogTxt;
-    }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -66,11 +50,6 @@ public class PrincipalView extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
         jMenuItemGraficoBarras = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItemPersistenciaTxt = new javax.swing.JMenuItem();
-        jMenuItemPersistenciaMySQL = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItemLogTxt = new javax.swing.JMenuItem();
-        jMenuItemLogMySQL = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItemSair = new javax.swing.JMenuItem();
 
@@ -92,7 +71,7 @@ public class PrincipalView extends javax.swing.JFrame {
         jMenu1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jMenu1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jMenu1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jMenu1.setPreferredSize(new java.awt.Dimension(150, 60));
+        jMenu1.setPreferredSize(new java.awt.Dimension(170, 60));
         jMenu1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenu1ActionPerformed(evt);
@@ -126,7 +105,7 @@ public class PrincipalView extends javax.swing.JFrame {
         jMenu5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jMenu5.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jMenu5.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jMenu5.setPreferredSize(new java.awt.Dimension(150, 60));
+        jMenu5.setPreferredSize(new java.awt.Dimension(170, 60));
 
         jMenuItemGraficoBarras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/barra_24x24.png"))); // NOI18N
         jMenuItemGraficoBarras.setText("Gráfico de Barras");
@@ -136,51 +115,17 @@ public class PrincipalView extends javax.swing.JFrame {
         jMenuBar1.add(jMenu5);
 
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/db_32x32.png"))); // NOI18N
-        jMenu3.setText("Persistência");
+        jMenu3.setText("Importar Dados");
         jMenu3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jMenu3.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jMenu3.setPreferredSize(new java.awt.Dimension(150, 60));
-
-        jMenuItemPersistenciaTxt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/txt_24x24.png"))); // NOI18N
-        jMenuItemPersistenciaTxt.setText("Em TXT");
-        jMenuItemPersistenciaTxt.setPreferredSize(new java.awt.Dimension(240, 33));
-        jMenu3.add(jMenuItemPersistenciaTxt);
-
-        jMenuItemPersistenciaMySQL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/db_24x24_1.png"))); // NOI18N
-        jMenuItemPersistenciaMySQL.setText("Em MySQL");
-        jMenuItemPersistenciaMySQL.setPreferredSize(new java.awt.Dimension(240, 33));
-        jMenuItemPersistenciaMySQL.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemPersistenciaMySQLActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuItemPersistenciaMySQL);
-
+        jMenu3.setPreferredSize(new java.awt.Dimension(170, 60));
         jMenuBar1.add(jMenu3);
-
-        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/log_32x32.png"))); // NOI18N
-        jMenu4.setText("Log");
-        jMenu4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jMenu4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jMenu4.setPreferredSize(new java.awt.Dimension(150, 60));
-
-        jMenuItemLogTxt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/txt_24x24.png"))); // NOI18N
-        jMenuItemLogTxt.setText("Em TXT");
-        jMenuItemLogTxt.setPreferredSize(new java.awt.Dimension(200, 33));
-        jMenu4.add(jMenuItemLogTxt);
-
-        jMenuItemLogMySQL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/db_24x24_1.png"))); // NOI18N
-        jMenuItemLogMySQL.setText("Em MySQL");
-        jMenuItemLogMySQL.setPreferredSize(new java.awt.Dimension(200, 33));
-        jMenu4.add(jMenuItemLogMySQL);
-
-        jMenuBar1.add(jMenu4);
 
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/system_32x32.png"))); // NOI18N
         jMenu2.setText("Sistema");
         jMenu2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jMenu2.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jMenu2.setPreferredSize(new java.awt.Dimension(150, 19));
+        jMenu2.setPreferredSize(new java.awt.Dimension(170, 60));
 
         jMenuItemSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/exit_24x24.png"))); // NOI18N
         jMenuItemSair.setText("Sair do Sistema");
@@ -220,26 +165,17 @@ public class PrincipalView extends javax.swing.JFrame {
        
     }//GEN-LAST:event_jMenuItemListarFuncionarioActionPerformed
 
-    private void jMenuItemPersistenciaMySQLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemPersistenciaMySQLActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItemPersistenciaMySQLActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPanePrincipalView;
     private javax.swing.JLabel jLabelTotalCadastrado;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItemAdicionarFuncionario;
     private javax.swing.JMenuItem jMenuItemGraficoBarras;
     private javax.swing.JMenuItem jMenuItemListarFuncionario;
-    private javax.swing.JMenuItem jMenuItemLogMySQL;
-    private javax.swing.JMenuItem jMenuItemLogTxt;
-    private javax.swing.JMenuItem jMenuItemPersistenciaMySQL;
-    private javax.swing.JMenuItem jMenuItemPersistenciaTxt;
     private javax.swing.JMenuItem jMenuItemSair;
     // End of variables declaration//GEN-END:variables
 }

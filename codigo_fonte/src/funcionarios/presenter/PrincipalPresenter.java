@@ -7,7 +7,6 @@ import factoryMethodDinamico.FabricaDAO;
 import factoryMethodDinamicoLog.FabricaLogDAO;
 import funcionarios.collection.Funcionarios;
 import funcionarios.collection.Logs;
-import funcionarios.model.Log;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import funcionarios.view.PrincipalView;
@@ -16,9 +15,6 @@ import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.FileNotFoundException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -121,64 +117,6 @@ public class PrincipalPresenter implements Observador {
             }
         });
 
-        this.view.getjMenuItemPersistenciaTxt().addActionListener((e) -> {
-
-            try {
-
-                miPersistenciaTxt();
-
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, "<html><body>"
-                        + "<h3>"
-                        + "<font face='Arial'>" + ex.getMessage() + "</font>"
-                        + "</h3>"
-                        + "</body></html>", "MENSAGEM", 1);
-            }
-
-        });
-
-        this.view.getjMenuItemPersistenciaMySQL().addActionListener((e) -> {
-            try {
-
-                miPersistenciaMySQL();
-
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, "<html><body>"
-                        + "<h3>"
-                        + "<font face='Arial'>" + ex.getMessage() + "</font>"
-                        + "</h3>"
-                        + "</body></html>", "MENSAGEM", 1);
-            }
-        });
-
-        this.view.getjMenuItemLogMySQL().addActionListener((e) -> {
-            try {
-
-                miLogMySQL();
-
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, "<html><body>"
-                        + "<h3>"
-                        + "<font face='Arial'>" + ex.getMessage() + "</font>"
-                        + "</h3>"
-                        + "</body></html>", "MENSAGEM", 1);
-            }
-        });
-
-        this.view.getjMenuItemLogTxt().addActionListener((e) -> {
-            try {
-
-                miLogTxt();
-
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, "<html><body>"
-                        + "<h3>"
-                        + "<font face='Arial'>" + ex.getMessage() + "</font>"
-                        + "</h3>"
-                        + "</body></html>", "MENSAGEM", 1);
-            }
-        });
-
         this.view.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -223,57 +161,7 @@ public class PrincipalPresenter implements Observador {
         this.view.setSize(d.width, d.height);
 
         this.view.getjDesktopPanePrincipalView().setSize(d);
-    }
-
-    private void miLogTxt() throws Exception {
-
-        this.configuracao.setValor("log", "TxtDAO");
-
-        //Gerar Log
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-        Date date = new Date();
-        Logs.getInstance().addLog(new Log("Persistência Log: ", " Alterado para LogTxtDAO ", dateFormat.format(date)));
-
-        throw new Exception("Log usando TXT atualizado com sucesso!");
-    }
-
-    private void miLogMySQL() throws Exception {
-
-        this.configuracao.setValor("log", "MySQLDAO");
-
-        //Gerar Log
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-        Date date = new Date();
-        Logs.getInstance().addLog(new Log("Persistência Log: ", " Alterado para LogMySQL ", dateFormat.format(date)));
-
-        throw new Exception("Log usando MySQL atualizado com sucesso!");
-    }
-
-    private void miPersistenciaTxt() throws Exception {
-
-        this.configuracao.setValor("persistencia", "TxtDAO");
-
-        //Gerar Log
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-        Date date = new Date();
-        Logs.getInstance().addLog(new Log("Persistência de dados: ", " Alterado para TxtDAO ", dateFormat.format(date)));
-
-        throw new Exception("Persistência de dados usando TXT atualizado com sucesso!");
-
-    }
-
-    private void miPersistenciaMySQL() throws Exception {
-        
-        this.configuracao.setValor("persistencia", "MySQLDAO");
-
-        //Gerar Log
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-        Date date = new Date();
-        Logs.getInstance().addLog(new Log("Persistência de dados: ", " Alterado para MySQLDAO ", dateFormat.format(date)));
-
-        throw new Exception("Persistência de dados usando MySQL atualizado com sucesso!");
-
-    }
+    }   
 
     private void miAdicionarFuncionario() throws Exception {
 
