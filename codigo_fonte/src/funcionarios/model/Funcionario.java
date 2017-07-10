@@ -1,4 +1,4 @@
-package memento;
+package funcionarios.model;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;

@@ -5,7 +5,7 @@ import dao.IFabricaAbstrata;
 import dao.IFuncionarioDAO;
 import factoryMethodDinamico.FabricaDAO;
 import funcionarios.collection.Logs;
-import memento.Funcionario;
+import funcionarios.model.Funcionario;
 import funcionarios.model.Log;
 import funcionarios.presenter.IncluirFuncionarioPresenter;
 import funcionarios.view.IncluirFuncionarioView;
@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import funcionarios.collection.Funcionarios;
 import state.EdicaoFuncionarioState;
-import zelador.Zelador;
+import memento.Zelador;
 
 /**
  *

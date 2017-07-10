@@ -1,4 +1,4 @@
-package memento;
+package funcionarios.model;
 
 import java.util.ArrayList;
 

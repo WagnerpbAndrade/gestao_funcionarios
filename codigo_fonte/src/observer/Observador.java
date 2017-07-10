@@ -1,6 +1,6 @@
 package observer;
 
-import memento.Funcionario;
+import funcionarios.model.Funcionario;
 import java.util.Collection;
 
 /**

@@ -6,7 +6,7 @@
 package funcionarios.presenter.apoio;
 
 import java.util.Comparator;
-import memento.Funcionario;
+import funcionarios.model.Funcionario;
 
 /**
  *

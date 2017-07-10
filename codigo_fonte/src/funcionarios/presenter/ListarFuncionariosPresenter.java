@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import memento.Funcionario;
+import funcionarios.model.Funcionario;
 import funcionarios.collection.Funcionarios;
 import funcionarios.view.ListarFuncionariosView;
 import java.awt.event.MouseAdapter;

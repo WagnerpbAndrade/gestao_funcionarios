@@ -5,7 +5,7 @@ import dao.IFabricaAbstrata;
 import factoryMethodDinamico.FabricaDAO;
 import funcionarios.collection.Funcionarios;
 import funcionarios.collection.Logs;
-import memento.Funcionario;
+import funcionarios.model.Funcionario;
 import funcionarios.model.Log;
 import funcionarios.presenter.IncluirFuncionarioPresenter;
 import funcionarios.view.IncluirFuncionarioView;

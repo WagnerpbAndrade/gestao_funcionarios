@@ -1,7 +1,7 @@
-package zelador;
+package memento;
 
 import java.util.ArrayList;
-import memento.FuncionarioMemento;
+import funcionarios.model.FuncionarioMemento;
 
 /**
  *

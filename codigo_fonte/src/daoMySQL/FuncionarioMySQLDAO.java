@@ -3,7 +3,7 @@ package daoMySQL;
 import conexao.AbstractMySQL;
 import conexao.ConexaoMySQL;
 import dao.IFuncionarioDAO;
-import memento.Funcionario;
+import funcionarios.model.Funcionario;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;

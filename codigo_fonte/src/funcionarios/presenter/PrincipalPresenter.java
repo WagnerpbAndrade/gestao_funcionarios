@@ -2,9 +2,8 @@ package funcionarios.presenter;
 
 import configuracao.Configuracao;
 import dao.IFabricaAbstrata;
-import dao.ILogDAO;
 import factoryMethodDinamico.FabricaDAO;
-import factoryMethodDinamicoLog.FabricaLogDAO;
+import factoryMethodDinamicoLog.FabricaLog;
 import funcionarios.collection.Funcionarios;
 import funcionarios.collection.Logs;
 import java.awt.event.ActionEvent;
@@ -21,10 +20,11 @@ import javax.swing.JOptionPane;
 import observer.Observador;
 import dao.IFuncionarioDAO;
 import java.awt.Frame;
+import log.ILog;
 
 /**
  *
- * @author wagner
+ * @author Wagner
  */
 public class PrincipalPresenter implements Observador {
 
@@ -34,8 +34,7 @@ public class PrincipalPresenter implements Observador {
     private IFabricaAbstrata fabrica;
     private IFuncionarioDAO dao;
     private IFabricaAbstrata fabricaLog;
-    private ILogDAO logDAO;
-    private Configuracao configuracao;
+    private ILog log;
 
     private PrincipalPresenter() {
 
@@ -62,7 +61,6 @@ public class PrincipalPresenter implements Observador {
     private void configuraTela() throws FileNotFoundException, Exception {
         this.view = new PrincipalView();
         
-        this.configuracao = Configuracao.getInstance();
 
         this.fabrica = FabricaDAO.getInstance().create();
         this.dao = this.fabrica.criaFabricaFuncionario();
@@ -70,8 +68,7 @@ public class PrincipalPresenter implements Observador {
         this.funcionarios = Funcionarios.getInstance();
         this.funcionarios.addObservador(this);
 
-        this.fabricaLog = FabricaLogDAO.getInstance().create();
-        this.logDAO = fabricaLog.criaFabricaLog();
+        this.log = FabricaLog.getInstance().create();
 
         this.view.getjMenuItemAdicionarFuncionario().addActionListener(new ActionListener() {
             @Override
@@ -151,7 +148,7 @@ public class PrincipalPresenter implements Observador {
     
     private void fecharTelaPrincipal() throws Exception {
 
-        this.logDAO.salvarLog(Logs.getInstance().getLogs());
+        this.log.salvarLog(Logs.getInstance().getLogs());
 
     }
 
@@ -177,7 +174,7 @@ public class PrincipalPresenter implements Observador {
     private void miSair() throws Exception {
 
         //Salvar Logs
-        this.logDAO.salvarLog(Logs.getInstance().getLogs());
+        this.log.salvarLog(Logs.getInstance().getLogs());
 
         this.view.setVisible(true);
         this.view.dispose();

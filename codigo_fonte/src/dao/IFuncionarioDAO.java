@@ -1,6 +1,6 @@
 package dao;
 
-import memento.Funcionario;
+import funcionarios.model.Funcionario;
 import java.util.Collection;
 import java.util.TreeSet;
 

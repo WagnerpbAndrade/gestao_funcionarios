@@ -1,6 +1,6 @@
 package chainBonus;
 
-import memento.Funcionario;
+import funcionarios.model.Funcionario;
 
 /**
  *

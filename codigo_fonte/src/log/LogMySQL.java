@@ -1,7 +1,6 @@
-package daoMySQL;
+package log;
 
 import conexao.AbstractMySQL;
-import dao.ILogDAO;
 import funcionarios.model.Log;
 import java.util.ArrayList;
 
@@ -9,7 +8,7 @@ import java.util.ArrayList;
  *
  * @author wagner
  */
-public class LogMySQL extends AbstractMySQL implements ILogDAO{
+public class LogMySQL extends AbstractMySQL implements ILog{
 
     @Override
     public void salvarLog(ArrayList<Log> logs) throws Exception {

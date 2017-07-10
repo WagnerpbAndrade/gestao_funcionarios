@@ -5,7 +5,7 @@ import dao.IFuncionarioDAO;
 import factoryMethodDinamico.FabricaDAO;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import memento.Funcionario;
+import funcionarios.model.Funcionario;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;

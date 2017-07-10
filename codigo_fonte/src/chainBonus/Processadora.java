@@ -1,7 +1,7 @@
 package chainBonus;
 
 import java.util.ArrayList;
-import memento.Funcionario;
+import funcionarios.model.Funcionario;
 
 /**
  *

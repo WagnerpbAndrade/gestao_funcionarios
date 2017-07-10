@@ -1,7 +1,7 @@
 package funcionarios.presenter;
 
 import funcionarios.collection.Funcionarios;
-import memento.Funcionario;
+import funcionarios.model.Funcionario;
 import funcionarios.view.BonusView;
 import java.util.Iterator;
 import javax.swing.table.DefaultTableModel;

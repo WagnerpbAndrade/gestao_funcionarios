@@ -8,32 +8,33 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import log.ILog;
 
 /**
  *
  * @author wagner
  */
-public final class FabricaLogDAO {
+public final class FabricaLog {
 
-    private static FabricaLogDAO INSTANCE;
+    private static FabricaLog INSTANCE;
     private Properties modeloDAO;
     private String nomeDAO;
 
-    private FabricaLogDAO() {
+    private FabricaLog() {
         this.modeloDAO = new Properties();
         try {
             
             carregaDAO();
             
         } catch (IOException ex) {
-            Logger.getLogger(FabricaLogDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FabricaLog.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
 
-    public static FabricaLogDAO getInstance() {
+    public static FabricaLog getInstance() {
         if (INSTANCE == null) {
-            INSTANCE = new FabricaLogDAO();
+            INSTANCE = new FabricaLog();
         }
 
         return INSTANCE;
@@ -43,18 +44,18 @@ public final class FabricaLogDAO {
         this.modeloDAO.load(new FileInputStream("src/factoryMethodDinamicoLog/commands.properties"));
     }
    
-    public IFabricaAbstrata create() throws Exception {
-        IFabricaAbstrata fabrica = null;
+    public ILog create() throws Exception {
+        ILog log = null;
 
         try {
             this.nomeDAO = this.modeloDAO.getProperty(Configuracao.getInstance().getValor("log"));
             Class classe = Class.forName(this.nomeDAO);
             Object object = classe.newInstance();
-            fabrica = (IFabricaAbstrata) object;
+            log = (ILog) object;
         } catch (Exception e) {
             throw new Exception("Esse modelo de persistência não existe!");
         }
 
-        return fabrica;
+        return log;
     }
 }

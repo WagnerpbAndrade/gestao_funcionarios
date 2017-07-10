@@ -2,7 +2,7 @@ package command;
 
 import funcionarios.collection.Funcionarios;
 import funcionarios.collection.Logs;
-import memento.Funcionario;
+import funcionarios.model.Funcionario;
 import funcionarios.model.Log;
 import funcionarios.presenter.BonusPresenter;
 import funcionarios.presenter.IncluirFuncionarioPresenter;

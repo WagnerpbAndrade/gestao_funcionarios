@@ -1,10 +1,12 @@
 package dao;
 
+import log.ILog;
+
 /**
  *
  * @author Wagner
  */
 public interface IFabricaAbstrata {
     public IFuncionarioDAO criaFabricaFuncionario();
-    public ILogDAO criaFabricaLog();
+    public ILog criaFabricaLog();
 }

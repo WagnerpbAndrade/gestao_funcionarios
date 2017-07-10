@@ -1,8 +1,9 @@
 package daoTxt;
 
+import log.LogTxt;
 import dao.IFabricaAbstrata;
 import dao.IFuncionarioDAO;
-import dao.ILogDAO;
+import log.ILog;
 
 /**
  *
@@ -16,8 +17,8 @@ public class FabricaTxt implements IFabricaAbstrata{
     }
 
     @Override
-    public ILogDAO criaFabricaLog() {
-        return new LogTxtDAO();
+    public ILog criaFabricaLog() {
+        return new LogTxt();
     }
     
 }

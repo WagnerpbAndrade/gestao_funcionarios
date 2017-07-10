@@ -1,2 +1,3 @@
 Persistência Log: , Alterado para LogTxtDAO ,09/07/2017 13:28:32
 Insersão: ,ddddddddddd foi cadastrado!,09/07/2017 13:29:19
+Visualização: ,Paulo Andrade foi visualizado! ,10/07/2017 15:46:26

@@ -1,7 +1,7 @@
 package daoTxt;
 
 import dao.IFuncionarioDAO;
-import memento.Funcionario;
+import funcionarios.model.Funcionario;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;

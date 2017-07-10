@@ -4,7 +4,7 @@ import dao.IFabricaAbstrata;
 import factoryMethodDinamico.FabricaDAO;
 import java.util.Iterator;
 import java.util.TreeSet;
-import memento.Funcionario;
+import funcionarios.model.Funcionario;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.logging.Level;

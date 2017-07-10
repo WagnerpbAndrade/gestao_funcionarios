@@ -1,8 +1,9 @@
 package daoMySQL;
 
+import log.LogMySQL;
 import dao.IFabricaAbstrata;
 import dao.IFuncionarioDAO;
-import dao.ILogDAO;
+import log.ILog;
 
 /**
  *
@@ -16,7 +17,7 @@ public class FabricaMySQL implements IFabricaAbstrata{
     }
 
     @Override
-    public ILogDAO criaFabricaLog() {
+    public ILog criaFabricaLog() {
         return new LogMySQL();
     }
     

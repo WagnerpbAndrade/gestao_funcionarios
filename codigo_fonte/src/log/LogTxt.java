@@ -1,6 +1,5 @@
-package daoTxt;
+package log;
 
-import dao.ILogDAO;
 import funcionarios.model.Log;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -14,11 +13,11 @@ import java.util.logging.Logger;
  *
  * @author wagner
  */
-public class LogTxtDAO implements ILogDAO {
+public class LogTxt implements ILog {
 
     private final File arquivo;
 
-    public LogTxtDAO() {
+    public LogTxt() {
         this.arquivo = new File("src/funcionarios/data/log.txt");
         if(!this.arquivo.exists())
             try {
@@ -26,7 +25,7 @@ public class LogTxtDAO implements ILogDAO {
                 this.arquivo.createNewFile();
                 
         } catch (IOException ex) {
-            Logger.getLogger(LogTxtDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LogTxt.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
