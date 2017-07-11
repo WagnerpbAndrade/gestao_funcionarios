@@ -182,11 +182,11 @@ public class IncluirFuncionarioCommand implements IFuncionarioCommand {
             throw new Exception("Nenhum estado salvo!");
         }
 
-        ;
+        f.restaurar(this.zelador.getUltimoSalvo());
 
-        this.funcionarios.setFuncionarioSelecionado(f.restaurar(this.zelador.getUltimoSalvo()));
+        this.funcionarios.setFuncionarioSelecionado(f);
 
-        this.funcionarios.atualizarStatus(f.restaurar(this.zelador.getUltimoSalvo()));
+        this.funcionarios.atualizarStatus(f);
 
         presenter = new IncluirFuncionarioPresenter();
         presenter.setState(new EdicaoFuncionarioState(presenter));

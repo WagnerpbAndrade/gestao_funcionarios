@@ -65,7 +65,7 @@ public abstract class AbstractFuncionario implements Comparable<AbstractFunciona
         return new FuncionarioMemento(id, nome, telefone, salarioBase, salarioComBonus, cargo, regiao, assiduidade, numeroDependentes, bonus);
     }
     
-    public AbstractFuncionario restaurar(FuncionarioMemento memento){
+    public void restaurar(FuncionarioMemento memento){
         this.id = memento.getId();
         this.nome = memento.getNome();
         this.telefone = memento.getTelefone();
@@ -77,7 +77,7 @@ public abstract class AbstractFuncionario implements Comparable<AbstractFunciona
         this.numeroDependentes = memento.getNumeroDependentes();
         this.bonus = memento.getBonus();
         
-        return this;
+        
     }
 
     public int getId() {
