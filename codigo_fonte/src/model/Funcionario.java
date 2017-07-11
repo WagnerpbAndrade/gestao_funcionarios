@@ -1,8 +1,8 @@
-package funcionarios.model;
+package model;
 
 import java.util.ArrayList;
 
-public class Funcionario extends AbstractFuncionario implements Comparable<AbstractFuncionario> {
+public class Funcionario extends AbstractFuncionario {
 
     
 

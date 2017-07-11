@@ -1,7 +1,7 @@
-package funcionarios.presenter;
+package presenter;
 
 import javax.swing.JOptionPane;
-import funcionarios.view.IncluirFuncionarioView;
+import view.IncluirFuncionarioView;
 import java.awt.Dimension;
 import java.io.FileNotFoundException;
 import state.EdicaoFuncionarioState;

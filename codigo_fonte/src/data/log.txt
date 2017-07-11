@@ -9,3 +9,5 @@ Insersão: ,testando denovo foi cadastrado!,10/07/2017 16:37:06
 Visualização: ,Wagner testando foi visualizado! ,10/07/2017 17:20:02
 Insersão: ,teaafsfae foi cadastrado!,10/07/2017 17:25:24
 Insersão: ,abababa foi cadastrado!,10/07/2017 17:25:53
+Visualização: ,Wagner foi visualizado! ,10/07/2017 23:50:25
+Edição: ,O funcionário: Wagnerfoi editado para: Wagner dkdkdk,(22)2222-2222,100.0,216.0,Gerente,Brasil,0,1,[Generoso, Assiduidade, Localidade, Dependentes],10/07/2017 23:50:34

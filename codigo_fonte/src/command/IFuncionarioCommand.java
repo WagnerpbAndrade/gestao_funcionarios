@@ -1,6 +1,6 @@
 package command;
 
-import funcionarios.presenter.IncluirFuncionarioPresenter;
+import presenter.IncluirFuncionarioPresenter;
 
 /**
  *

@@ -1,6 +1,6 @@
 package grafico;
 
-import funcionarios.model.AbstractFuncionario;
+import model.AbstractFuncionario;
 import dao.IFabricaAbstrata;
 import dao.IFuncionarioDAO;
 import factoryMethodDinamico.FabricaDAO;

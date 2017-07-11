@@ -1,6 +1,6 @@
 package dao;
 
-import funcionarios.model.AbstractFuncionario;
+import model.AbstractFuncionario;
 import java.util.Collection;
 import java.util.TreeSet;
 

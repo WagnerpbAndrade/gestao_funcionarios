@@ -1,15 +1,15 @@
 package command;
 
 import chainBonus.Processadora;
-import funcionarios.model.AbstractFuncionario;
+import model.AbstractFuncionario;
 import dao.IFabricaAbstrata;
 import factoryMethodDinamico.FabricaDAO;
-import funcionarios.collection.Funcionarios;
-import funcionarios.collection.Logs;
-import funcionarios.model.Funcionario;
-import funcionarios.model.Log;
-import funcionarios.presenter.IncluirFuncionarioPresenter;
-import funcionarios.view.IncluirFuncionarioView;
+import collection.Funcionarios;
+import collection.Logs;
+import model.Funcionario;
+import model.Log;
+import presenter.IncluirFuncionarioPresenter;
+import view.IncluirFuncionarioView;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;

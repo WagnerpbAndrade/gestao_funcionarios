@@ -1,9 +1,9 @@
-package funcionarios.presenter;
+package presenter;
 
-import funcionarios.model.AbstractFuncionario;
+import model.AbstractFuncionario;
 import dao.IFabricaAbstrata;
 import factoryMethodDinamico.FabricaDAO;
-import funcionarios.presenter.apoio.ComparadorDeTelefoneFuncionario;
+import apoio.ComparadorDeTelefoneFuncionario;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
@@ -13,8 +13,8 @@ import java.util.Collections;
 import java.util.Iterator;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import funcionarios.collection.Funcionarios;
-import funcionarios.view.ListarFuncionariosView;
+import collection.Funcionarios;
+import view.ListarFuncionariosView;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.logging.Level;

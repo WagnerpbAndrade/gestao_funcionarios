@@ -1,6 +1,6 @@
-package funcionarios.collection;
+package collection;
 
-import funcionarios.model.Log;
+import model.Log;
 import java.util.ArrayList;
 
 /**

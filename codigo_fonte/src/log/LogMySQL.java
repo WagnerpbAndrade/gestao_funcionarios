@@ -1,7 +1,7 @@
 package log;
 
 import conexao.AbstractMySQL;
-import funcionarios.model.Log;
+import model.Log;
 import java.util.ArrayList;
 
 /**

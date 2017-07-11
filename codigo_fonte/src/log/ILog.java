@@ -1,6 +1,6 @@
 package log;
 
-import funcionarios.model.Log;
+import model.Log;
 import java.util.ArrayList;
 
 /**

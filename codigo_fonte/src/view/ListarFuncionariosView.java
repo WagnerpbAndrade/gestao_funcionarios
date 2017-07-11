@@ -8,7 +8,7 @@
  *
  * Created on 22/11/2010, 02:42:48
  */
-package funcionarios.view;
+package view;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;

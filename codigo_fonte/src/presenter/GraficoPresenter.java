@@ -1,7 +1,7 @@
-package funcionarios.presenter;
+package presenter;
 
-import funcionarios.collection.Funcionarios;
-import funcionarios.view.GraficoView;
+import collection.Funcionarios;
+import view.GraficoView;
 import grafico.GerarGrafico;
 import java.awt.BorderLayout;
 import java.awt.Dimension;

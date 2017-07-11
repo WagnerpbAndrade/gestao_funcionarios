@@ -1,6 +1,6 @@
 package log;
 
-import funcionarios.model.Log;
+import model.Log;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -18,7 +18,7 @@ public class LogTxt implements ILog {
     private final File arquivo;
 
     public LogTxt() {
-        this.arquivo = new File("src/funcionarios/data/log.txt");
+        this.arquivo = new File("src/data/log.txt");
         if(!this.arquivo.exists())
             try {
                 

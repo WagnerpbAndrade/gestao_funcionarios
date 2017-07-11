@@ -1,7 +1,7 @@
 package state;
 
 import command.VisualizarFuncionarioCommand;
-import funcionarios.presenter.IncluirFuncionarioPresenter;
+import presenter.IncluirFuncionarioPresenter;
 
 /**
  *

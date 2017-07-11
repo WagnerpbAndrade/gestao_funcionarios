@@ -8,7 +8,7 @@
  *
  * Created on 22/11/2010, 02:10:48
  */
-package funcionarios.view;
+package view;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;

@@ -1,4 +1,4 @@
-package funcionarios.view;
+package view;
 
 import javax.swing.JDesktopPane;
 import javax.swing.JLabel;

@@ -1,8 +1,8 @@
 package daoTxt;
 
-import funcionarios.model.AbstractFuncionario;
+import model.AbstractFuncionario;
 import dao.IFuncionarioDAO;
-import funcionarios.model.Funcionario;
+import model.Funcionario;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -23,7 +23,7 @@ public class FuncionarioTxtDAO implements IFuncionarioDAO {
     private final File arquivo;
 
     public FuncionarioTxtDAO()  {
-        this.arquivo = new File("src/funcionarios/data/funcionarios.txt");
+        this.arquivo = new File("src/data/funcionarios.txt");
         if(!this.arquivo.exists())
             try {
                 

@@ -1,14 +1,14 @@
-package funcionarios.presenter;
+package presenter;
 
 import configuracao.Configuracao;
 import dao.IFabricaAbstrata;
 import factoryMethodDinamico.FabricaDAO;
 import factoryMethodDinamicoLog.FabricaLog;
-import funcionarios.collection.Funcionarios;
-import funcionarios.collection.Logs;
+import collection.Funcionarios;
+import collection.Logs;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import funcionarios.view.PrincipalView;
+import view.PrincipalView;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;

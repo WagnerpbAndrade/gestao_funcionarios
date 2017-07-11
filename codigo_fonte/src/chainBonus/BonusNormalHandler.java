@@ -1,6 +1,6 @@
 package chainBonus;
 
-import funcionarios.model.AbstractFuncionario;
+import model.AbstractFuncionario;
 
 /**
  *

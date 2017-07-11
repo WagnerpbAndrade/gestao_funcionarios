@@ -1,6 +1,6 @@
-package funcionarios.collection;
+package collection;
 
-import funcionarios.model.AbstractFuncionario;
+import model.AbstractFuncionario;
 import dao.IFabricaAbstrata;
 import factoryMethodDinamico.FabricaDAO;
 import java.util.Iterator;

@@ -2,9 +2,9 @@ package daoMySQL;
 
 import conexao.AbstractMySQL;
 import conexao.ConexaoMySQL;
-import funcionarios.model.AbstractFuncionario;
+import model.AbstractFuncionario;
 import dao.IFuncionarioDAO;
-import funcionarios.model.Funcionario;
+import model.Funcionario;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;

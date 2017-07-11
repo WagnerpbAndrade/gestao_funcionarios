@@ -1,7 +1,7 @@
 package memento;
 
 import java.util.ArrayList;
-import funcionarios.model.FuncionarioMemento;
+import model.FuncionarioMemento;
 
 /**
  *

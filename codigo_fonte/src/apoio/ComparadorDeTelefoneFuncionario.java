@@ -3,9 +3,9 @@
  * and open the template in the editor.
  */
 
-package funcionarios.presenter.apoio;
+package apoio;
 
-import funcionarios.model.AbstractFuncionario;
+import model.AbstractFuncionario;
 import java.util.Comparator;
 
 /**

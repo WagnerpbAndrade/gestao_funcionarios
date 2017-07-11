@@ -1,4 +1,4 @@
-package funcionarios.model;
+package model;
 
 /**
  *

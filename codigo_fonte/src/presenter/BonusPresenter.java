@@ -1,8 +1,8 @@
-package funcionarios.presenter;
+package presenter;
 
-import funcionarios.model.AbstractFuncionario;
-import funcionarios.collection.Funcionarios;
-import funcionarios.view.BonusView;
+import model.AbstractFuncionario;
+import collection.Funcionarios;
+import view.BonusView;
 import java.util.Iterator;
 import javax.swing.table.DefaultTableModel;
 

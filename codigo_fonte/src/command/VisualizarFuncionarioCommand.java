@@ -1,12 +1,12 @@
 package command;
 
-import funcionarios.collection.Funcionarios;
-import funcionarios.collection.Logs;
-import funcionarios.model.AbstractFuncionario;
-import funcionarios.model.Log;
-import funcionarios.presenter.BonusPresenter;
-import funcionarios.presenter.IncluirFuncionarioPresenter;
-import funcionarios.view.IncluirFuncionarioView;
+import collection.Funcionarios;
+import collection.Logs;
+import model.AbstractFuncionario;
+import model.Log;
+import presenter.BonusPresenter;
+import presenter.IncluirFuncionarioPresenter;
+import view.IncluirFuncionarioView;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;

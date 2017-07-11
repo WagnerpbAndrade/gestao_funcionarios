@@ -1,4 +1,4 @@
-package funcionarios.model;
+package model;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
