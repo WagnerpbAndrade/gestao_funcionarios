@@ -66,14 +66,20 @@ public class Configuracao {
             Logger.getLogger(Configuracao.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
-                
+
                 outputStream.close();
-                
+
             } catch (IOException ex) {
                 Logger.getLogger(Configuracao.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+    }
 
+    public void verificarConfiguracao() throws Exception {
+        String persistencia = getValor("persistencia");
+        if (!persistencia.equals("")) {
+            
+        }
     }
 
 }

@@ -12,3 +12,7 @@ Insersão: ,abababa foi cadastrado!,10/07/2017 17:25:53
 Visualização: ,Wagner foi visualizado! ,10/07/2017 23:50:25
 Edição: ,O funcionário: Wagnerfoi editado para: Wagner dkdkdk,(22)2222-2222,100.0,216.0,Gerente,Brasil,0,1,[Generoso, Assiduidade, Localidade, Dependentes],10/07/2017 23:50:34
 Insersão: ,teta foi cadastrado!,11/07/2017 00:00:09
+Insersão: ,eueueu foi cadastrado!,11/07/2017 21:38:24
+Visualização: ,asdfas foi visualizado! ,11/07/2017 21:38:58
+Edição: ,O funcionário: asdfasfoi editado para: asdfas,(11)1111-1111,100.0,1208.0,Gerente,Síria,1,1,[Generoso, Assiduidade, Localidade, Dependentes],11/07/2017 21:39:09
+Edição: ,O funcionário: Wagner dkdkdkfoi editado para: Wagner d,(22)2222-2222,100.0,216.0,Gerente,Brasil,0,1,[Generoso, Assiduidade, Localidade, Dependentes],11/07/2017 21:49:00
