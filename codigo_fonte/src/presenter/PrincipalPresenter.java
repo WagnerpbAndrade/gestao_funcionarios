@@ -1,10 +1,13 @@
 package presenter;
 
-import configuracao.Configuracao;
+import chainBonus.Processadora;
+import collection.CollectionArray;
+import collection.CollectionArrayList;
 import dao.IFabricaAbstrata;
 import factoryMethodDinamico.FabricaDAO;
 import factoryMethodDinamicoLog.FabricaLog;
 import collection.Funcionarios;
+import collection.ICollection;
 import collection.Logs;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,8 +22,12 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import observer.Observador;
 import dao.IFuncionarioDAO;
+import iterator.IteratorIF;
 import java.awt.Frame;
 import log.ILog;
+import managementcollaborators.Collaborator;
+import model.Funcionario;
+import sistemaa.Cliente;
 
 /**
  *
@@ -60,7 +67,6 @@ public class PrincipalPresenter implements Observador {
 
     private void configuraTela() throws FileNotFoundException, Exception {
         this.view = new PrincipalView();
-        
 
         this.fabrica = FabricaDAO.getInstance().create();
         this.dao = this.fabrica.criaFabricaFuncionario();
@@ -88,11 +94,11 @@ public class PrincipalPresenter implements Observador {
             miListarFuncionario();
 
         });
-        
+
         this.view.getjMenuItemGraficoBarras().addActionListener((e) -> {
-            
-            miGraficoBarras();
-            
+
+            miGraficoHorizontal();
+
         });
 
         this.view.getjMenuItemSair().addActionListener(new ActionListener() {
@@ -132,6 +138,36 @@ public class PrincipalPresenter implements Observador {
 
         });
 
+        this.view.getjMenuItemSistemaA().addActionListener((e) -> {
+            try {
+                miSistemaA();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "<html><body>"
+                        + "<h3>"
+                        + "<font face='Arial'>" + ex.getMessage() + "</font>"
+                        + "</h3>"
+                        + "</body></html>", "MENSAGEM", 1);
+            }
+        });
+
+        this.view.getjMenuItemSistemaB().addActionListener((e) -> {
+
+            try {
+                miSistemaB();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "<html><body>"
+                        + "<h3>"
+                        + "<font face='Arial'>" + ex.getMessage() + "</font>"
+                        + "</h3>"
+                        + "</body></html>", "MENSAGEM", 1);
+            }
+
+        });
+        
+        this.view.getjMenuItemGraficoVertical().addActionListener((e) -> {
+            miGraficoVertical();
+        });
+
         update();
 
         //setDimension();
@@ -141,11 +177,57 @@ public class PrincipalPresenter implements Observador {
         this.view.setLocationRelativeTo(null);
         this.view.setVisible(true);
     }
-    
-    private void miGraficoBarras(){
-        this.view.getjDesktopPanePrincipalView().add(new GraficoPresenter().getView());
+
+    private void miSistemaB() throws Exception {
+
+        ICollection collectionArray = new CollectionArray();
+        IteratorIF it = collectionArray.criaIterator();
+
+        while (it.existeProximo()) {
+            Collaborator c = (Collaborator) it.proximo();
+
+            Funcionario func = new Funcionario(c.getFirstName() + " " + c.getMiddleName() + " " + c.getLastName(),
+                    c.getPhone(), 0, 0, "Programador", c.getCountry(), "Normal", 0, 0);
+
+            Processadora p = new Processadora(func);
+            p.processar();
+
+            this.funcionarios.add(func);
+
+        }
+
+        throw new Exception("Importação efetuada com sucesso!");
+    }
+
+    private void miSistemaA() throws Exception {
+
+        ICollection collectionArraylist = new CollectionArrayList();
+        IteratorIF it = collectionArraylist.criaIterator();
+
+        while (it.existeProximo()) {
+            Cliente c = (Cliente) it.proximo();
+
+            Funcionario func = new Funcionario(c.getNomeCompleto(), c.getTelefone(), c.getRendaBruta(), 0, "Programador", "?", "Normal", 0, 0);
+
+            Processadora p = new Processadora(func);
+            p.processar();
+
+            this.funcionarios.add(func);
+
+        }
+
+        throw new Exception("Importação efetuada com sucesso!");
+
     }
     
+    private void miGraficoVertical(){
+        this.view.getjDesktopPanePrincipalView().add(new GraficoVerticalPresenter().getView());
+    }
+
+    private void miGraficoHorizontal() {
+        this.view.getjDesktopPanePrincipalView().add(new GraficoHorizontalPresenter().getView());
+    }
+
     private void fecharTelaPrincipal() throws Exception {
 
         this.log.salvarLog(Logs.getInstance().getLogs());
@@ -158,7 +240,7 @@ public class PrincipalPresenter implements Observador {
         this.view.setSize(d.width, d.height);
 
         this.view.getjDesktopPanePrincipalView().setSize(d);
-    }   
+    }
 
     private void miAdicionarFuncionario() throws Exception {
 

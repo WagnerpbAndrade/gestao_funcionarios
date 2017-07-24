@@ -2,62 +2,71 @@ package factoryMethodDinamico;
 
 import configuracao.Configuracao;
 import dao.IFabricaAbstrata;
-import java.io.FileInputStream;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.Constructor;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import dao.IFuncionarioDAO;
 
 /**
  *
  * @author Wagner
  */
 public final class FabricaDAO {
-    
+
     private static FabricaDAO INSTANCE;
-    private Properties modeloDAO;
-    private String nomeDAO;
-    
+    private IFabricaAbstrata classeDAO = null;
 
     private FabricaDAO() {
-        this.modeloDAO = new Properties();
-        
+
         try {
-            
+
             carregaDAO();
-            
+
         } catch (IOException ex) {
             Logger.getLogger(FabricaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    public static FabricaDAO getInstance(){
-        if(INSTANCE == null)
+
+    public static FabricaDAO getInstance() {
+        if (INSTANCE == null) {
             INSTANCE = new FabricaDAO();
-        
+        }
+
         return INSTANCE;
     }
-    
-    private void carregaDAO() throws FileNotFoundException, IOException{
-        this.modeloDAO.load(new FileInputStream("src/factoryMethodDinamico/commands.properties"));
+
+    private void carregaDAO() throws FileNotFoundException, IOException {
+
     }
-    
-    public IFabricaAbstrata create() throws Exception{
-        IFabricaAbstrata fabrica = null;
-        
+
+    public IFabricaAbstrata create() throws Exception {
+
         try {
-            this.nomeDAO = this.modeloDAO.getProperty(Configuracao.getInstance().getValor("persistencia"));
-            Class classe = Class.forName(this.nomeDAO);
-            Object object = classe.newInstance();
-            fabrica = (IFabricaAbstrata) object;
+            
+            String persistencia = Configuracao.getInstance().getValor("persistencia");
+            String caminhoDao = "dao" + persistencia + "." + "Fabrica" + persistencia;
+            String caminhoJar = "Dao" + persistencia + ".jar";
+            
+            File jarFile = new File(caminhoJar).getAbsoluteFile();
+            URL[] caminhosClasses = new URL[]{jarFile.toURI().toURL()};
+            ClassLoader carregador = new URLClassLoader(caminhosClasses);
+            Class classe = carregador.loadClass(caminhoDao);
+            Constructor constructor = classe.getDeclaredConstructor();
+            constructor.setAccessible(true);
+            
+            this.classeDAO = (IFabricaAbstrata) constructor.newInstance();            
+
         } catch (Exception e) {
-            throw new Exception("Esse modelo de persistência não existe!");
+            throw new Exception("Não foi possível carregar o módulo de acesso a dado: \n\n\t" + e.getMessage()
+                        + "\n\n Atribua um classe válida à chave \"persistencia\", no arquivo configuracao.properties "
+                        + "\n Padrão correto de escrita: MySQL ou Txt \n");
         }
-        
-        return fabrica;
+
+        return classeDAO;
     }
-    
-    
 }

@@ -1,28 +1,26 @@
 package presenter;
 
+import buildergrafico.Diretor;
+import buildergrafico.GraficoVerticalBuilder;
 import collection.Funcionarios;
 import view.GraficoView;
-import grafico.GerarGrafico;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import javax.swing.JPanel;
 import observer.Observador;
 import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
 
 /**
  *
  * @author Wagner
  */
-public class GraficoPresenter  implements Observador{
+public class GraficoVerticalPresenter implements Observador {
 
     private GraficoView view;
-    private GerarGrafico gerarGrafico;
-    private JFreeChart grafico;
     private JPanel panel;
     private Funcionarios funcionarios;
 
-    public GraficoPresenter() {
+    public GraficoVerticalPresenter() {
 
         configuraTela();
 
@@ -60,11 +58,12 @@ public class GraficoPresenter  implements Observador{
 
     private void criarGrafico() {
 
+        Diretor diretor = new Diretor(new GraficoVerticalBuilder());
+        diretor.build();
+        ChartPanel myChartPanel = diretor.getChartPanel();
+
         this.panel = this.view.getjPanelGrafico();
 
-        this.gerarGrafico = new GerarGrafico("Renda Total Por Região", "Renda (R$)", "Legenda", true, true, true);
-
-        ChartPanel myChartPanel = new ChartPanel(this.gerarGrafico.criarGrafico());
         myChartPanel.setDomainZoomable(true);
 
         myChartPanel.setSize(this.panel.getPreferredSize());

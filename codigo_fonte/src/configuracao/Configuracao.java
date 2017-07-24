@@ -74,12 +74,4 @@ public class Configuracao {
             }
         }
     }
-
-    public void verificarConfiguracao() throws Exception {
-        String persistencia = getValor("persistencia");
-        if (!persistencia.equals("")) {
-            
-        }
-    }
-
 }

@@ -13,6 +13,18 @@ public class PrincipalView extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JMenuItem getjMenuItemSistemaA() {
+        return jMenuItemSistemaA;
+    }
+
+    public JMenuItem getjMenuItemSistemaB() {
+        return jMenuItemSistemaB;
+    }
+
+    public JMenuItem getjMenuItemGraficoVertical() {
+        return jMenuItemGraficoVertical;
+    }
+    
     public JMenuItem getjMenuItemGraficoBarras() {
         return jMenuItemGraficoBarras;
     }
@@ -49,7 +61,10 @@ public class PrincipalView extends javax.swing.JFrame {
         jMenuItemListarFuncionario = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItemGraficoBarras = new javax.swing.JMenuItem();
+        jMenuItemGraficoVertical = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        jMenuItemSistemaA = new javax.swing.JMenuItem();
+        jMenuItemSistemaB = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItemSair = new javax.swing.JMenuItem();
 
@@ -107,10 +122,14 @@ public class PrincipalView extends javax.swing.JFrame {
         jMenu5.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         jMenu5.setPreferredSize(new java.awt.Dimension(170, 60));
 
-        jMenuItemGraficoBarras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/barra_24x24.png"))); // NOI18N
-        jMenuItemGraficoBarras.setText("Gráfico de Barras");
+        jMenuItemGraficoBarras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/horizontal_24x24.png"))); // NOI18N
+        jMenuItemGraficoBarras.setText("Gráfico Horizontal");
         jMenuItemGraficoBarras.setPreferredSize(new java.awt.Dimension(240, 30));
         jMenu5.add(jMenuItemGraficoBarras);
+
+        jMenuItemGraficoVertical.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/barra_24x24.png"))); // NOI18N
+        jMenuItemGraficoVertical.setText("Gráfico Vertical");
+        jMenu5.add(jMenuItemGraficoVertical);
 
         jMenuBar1.add(jMenu5);
 
@@ -119,6 +138,15 @@ public class PrincipalView extends javax.swing.JFrame {
         jMenu3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jMenu3.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         jMenu3.setPreferredSize(new java.awt.Dimension(170, 60));
+
+        jMenuItemSistemaA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/import_24x24.png"))); // NOI18N
+        jMenuItemSistemaA.setText("SistemaA");
+        jMenu3.add(jMenuItemSistemaA);
+
+        jMenuItemSistemaB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/import_24x24.png"))); // NOI18N
+        jMenuItemSistemaB.setText("Collaborators");
+        jMenu3.add(jMenuItemSistemaB);
+
         jMenuBar1.add(jMenu3);
 
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/system_32x32.png"))); // NOI18N
@@ -175,7 +203,10 @@ public class PrincipalView extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItemAdicionarFuncionario;
     private javax.swing.JMenuItem jMenuItemGraficoBarras;
+    private javax.swing.JMenuItem jMenuItemGraficoVertical;
     private javax.swing.JMenuItem jMenuItemListarFuncionario;
     private javax.swing.JMenuItem jMenuItemSair;
+    private javax.swing.JMenuItem jMenuItemSistemaA;
+    private javax.swing.JMenuItem jMenuItemSistemaB;
     // End of variables declaration//GEN-END:variables
 }
