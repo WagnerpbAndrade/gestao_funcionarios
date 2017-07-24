@@ -150,7 +150,7 @@ public class IncluirFuncionarioCommand implements IFuncionarioCommand {
 
             zelador.addMemento(f.getMemento());
 
-            this.dao.inserir(f);
+            this.funcionarios.add(f);
 
             JOptionPane.showMessageDialog(view, nome + " cadastrado com sucesso!");
             this.view.getTxtNome().setText("");

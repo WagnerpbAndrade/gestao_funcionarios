@@ -278,7 +278,7 @@ public class PrincipalPresenter implements Observador {
     public void update() {
         try {
 
-            this.view.getjLabelTotalCadastrado().setText("Funcionários cadastrados: " + this.dao.getAll().size());
+            this.view.getjLabelTotalCadastrado().setText("Funcionários cadastrados: " + this.dao.getAll().size());                 
 
         } catch (Exception ex) {
             Logger.getLogger(PrincipalPresenter.class

@@ -44,7 +44,7 @@ public class EditarFuncionarioCommand implements IFuncionarioCommand {
         }
 
     }
-    
+
     @Override
     public void executar(IncluirFuncionarioPresenter presenter) {
         this.view = presenter.getView();
@@ -152,14 +152,9 @@ public class EditarFuncionarioCommand implements IFuncionarioCommand {
 
             tratarBonus(funcionarioEditado);
 
-            if (funcionario.getId() != 0) {
-                funcionarioEditado.setId(funcionario.getId());
+            funcionarioEditado.setId(funcionario.getId());
 
-                editarFuncionario(funcionarioEditado);
-
-            } else {
-                this.funcionarios.add(funcionarioEditado);
-            }
+            editarFuncionario(funcionarioEditado);
 
             JOptionPane.showMessageDialog(view, "Funcionário editado com sucesso!");
 
@@ -192,11 +187,11 @@ public class EditarFuncionarioCommand implements IFuncionarioCommand {
     }
 
     private void tratarBonus(AbstractFuncionario f) {
-        
+
         Processadora p = new Processadora(f);
-        
+
         p.processar();
-        
+
     }
 
     @Override

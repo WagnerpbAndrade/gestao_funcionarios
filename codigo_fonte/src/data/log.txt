@@ -29,3 +29,43 @@ Edição: ,O funcionário: Testando foi editado para: Testando ,(11)1111-1111,10
 Insersão: ,Wagner Andrade foi cadastrado!,24/07/2017 12:40:02
 Visualização: ,Wagner Andrade foi visualizado! ,24/07/2017 13:00:55
 Insersão: ,Teste foi cadastrado!,24/07/2017 13:59:34
+Visualização: ,Abigail Sargent foi visualizado! ,24/07/2017 15:56:52
+Edição: ,O funcionário: Abigail Sargentfoi editado para: Abigail Sargent,(  )    -    ,912.0,975.84,Programador,Caribe,2,0,[Normal, Assiduidade],24/07/2017 15:57:10
+Visualização: ,Amanda Snyder foi visualizado! ,24/07/2017 15:57:54
+Visualização: ,Abigail Sargent foi visualizado! ,24/07/2017 15:58:08
+Edição: ,O funcionário: Abigail Sargentfoi editado para: Abigail Sargent,(  )    -    ,912.0,10123.2,Programador,Síria,0,0,[Normal, Assiduidade, Localidade],24/07/2017 15:58:29
+Visualização: ,Chadwick Beck foi visualizado! ,24/07/2017 15:58:43
+Visualização: ,Colette Petty foi visualizado! ,24/07/2017 16:06:58
+Insersão: ,Wagner Andrade foi cadastrado!,24/07/2017 16:07:48
+Visualização: ,Wagner Andrade foi visualizado! ,24/07/2017 16:08:04
+Visualização: ,Wagner Andrade foi visualizado! ,24/07/2017 16:08:25
+Edição: ,O funcionário: Wagner Andradefoi editado para: Wagner Andrade,(00)1111-1111,1000.0,1200.0,Gerente,Brasil,0,0,[Generoso, Assiduidade, Localidade],24/07/2017 16:08:32
+Edição: ,O funcionário: Wagner Andradefoi editado para: Wagner Andrade,(00)1111-1111,1000.0,1200.0,Gerente,Brasil,0,0,[Generoso, Assiduidade, Localidade],24/07/2017 16:09:30
+Visualização: ,Ainsley Morton Nicholson foi visualizado! ,24/07/2017 16:11:46
+Edição: ,O funcionário: Ainsley Morton Nicholsonfoi editado para: Ainsley Morton Nicholson,(00)0000-0000,1000.0,1100.0,Programador,Netherlands,0,0,[Normal, Assiduidade],24/07/2017 16:12:09
+Insersão: ,aaaaa foi cadastrado!,24/07/2017 16:12:54
+Edição: ,O funcionário: aaaaafoi editado para: aaaaa,(00)0000-0000,111.0,225.87,Gerente,Brasil,1,1,[Generoso, Assiduidade, Localidade, Dependentes],24/07/2017 16:13:38
+Insersão: ,teste foi cadastrado!,24/07/2017 16:17:37
+Visualização: ,teste foi visualizado! ,24/07/2017 16:17:42
+Visualização: ,teste foi visualizado! ,24/07/2017 16:18:01
+Edição: ,O funcionário: testefoi editado para: teste,(00)0000-0000,10000.0,12096.0,Gerente,Brasil,0,1,[Generoso, Assiduidade, Localidade, Dependentes],24/07/2017 16:18:08
+Insersão: ,Wagner Andrade foi cadastrado!,24/07/2017 16:25:38
+Visualização: ,Wagner Andrade foi visualizado! ,24/07/2017 16:25:42
+Edição: ,O funcionário: Wagner Andradefoi editado para: Wagner Andrade,(11)1111-1111,100.0,213.0,Gerente,Brasil,1,1,[Generoso, Assiduidade, Localidade, Dependentes],24/07/2017 16:25:53
+Visualização: ,Wagner Andrade foi visualizado! ,24/07/2017 16:25:59
+Insersão: ,wagner andrade foi cadastrado!,24/07/2017 16:28:49
+Visualização: ,wagner andrade foi visualizado! ,24/07/2017 16:28:53
+Edição: ,O funcionário: wagner andradefoi editado para: wagner andrade,(11)1111-1111,100.0,213.0,Gerente,Brasil,1,1,[Generoso, Assiduidade, Localidade, Dependentes],24/07/2017 16:29:03
+Visualização: ,wagner andrade foi visualizado! ,24/07/2017 16:29:06
+Visualização: ,wagner andrade foi visualizado! ,24/07/2017 16:35:24
+Visualização: ,wagner andrade foi visualizado! ,24/07/2017 16:35:28
+Edição: ,O funcionário: wagner andradefoi editado para: wagner andrade,(11)1111-1111,1000.0,1170.0,Gerente,Brasil,1,0,[Generoso, Assiduidade, Localidade],24/07/2017 16:35:39
+Visualização: ,wagner andrade foi visualizado! ,24/07/2017 16:35:43
+Insersão: ,teste foi cadastrado!,24/07/2017 16:41:40
+Insersão: ,testeteste foi cadastrado!,24/07/2017 16:43:35
+Insersão: ,teste4 foi cadastrado!,24/07/2017 16:46:11
+Insersão: ,wagner foi cadastrado!,24/07/2017 16:46:47
+Insersão: ,caribe foi cadastrado!,24/07/2017 16:47:33
+Visualização: ,wagner foi visualizado! ,24/07/2017 16:48:04
+Visualização: ,caribe foi visualizado! ,24/07/2017 16:48:15
+Edição: ,O funcionário: caribefoi editado para: caribe,(11)1111-1111,100.0,1550.0,Gerente,Caribe,0,15,[Normal, Assiduidade, Dependentes],24/07/2017 16:48:28
