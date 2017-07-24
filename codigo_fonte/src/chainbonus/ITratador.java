@@ -1,4 +1,4 @@
-package chainBonus;
+package chainbonus;
 
 /**
  *

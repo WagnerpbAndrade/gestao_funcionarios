@@ -1,4 +1,4 @@
-package factoryMethodDinamicoLog;
+package factorymethoddinamicoLog;
 
 import configuracao.Configuracao;
 import dao.IFabricaAbstrata;

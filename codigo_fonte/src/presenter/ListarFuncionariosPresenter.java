@@ -2,7 +2,7 @@ package presenter;
 
 import model.AbstractFuncionario;
 import dao.IFabricaAbstrata;
-import factoryMethodDinamico.FabricaDAO;
+import factorymethoddinamico.FabricaDAO;
 import apoio.ComparadorDeTelefoneFuncionario;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

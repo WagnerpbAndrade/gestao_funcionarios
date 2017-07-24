@@ -2,7 +2,7 @@ package collection;
 
 import model.AbstractFuncionario;
 import dao.IFabricaAbstrata;
-import factoryMethodDinamico.FabricaDAO;
+import factorymethoddinamico.FabricaDAO;
 import java.util.Iterator;
 import java.util.TreeSet;
 import java.util.ArrayList;

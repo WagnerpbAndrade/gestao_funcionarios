@@ -1,10 +1,10 @@
 package command;
 
-import chainBonus.Processadora;
+import chainbonus.Processadora;
 import model.AbstractFuncionario;
 import dao.IFabricaAbstrata;
 import dao.IFuncionarioDAO;
-import factoryMethodDinamico.FabricaDAO;
+import factorymethoddinamico.FabricaDAO;
 import collection.Logs;
 import model.Funcionario;
 import model.Log;

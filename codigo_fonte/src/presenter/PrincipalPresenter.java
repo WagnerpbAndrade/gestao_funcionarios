@@ -1,11 +1,11 @@
 package presenter;
 
-import chainBonus.Processadora;
+import chainbonus.Processadora;
 import collection.CollectionArray;
 import collection.CollectionArrayList;
 import dao.IFabricaAbstrata;
-import factoryMethodDinamico.FabricaDAO;
-import factoryMethodDinamicoLog.FabricaLog;
+import factorymethoddinamico.FabricaDAO;
+import factorymethoddinamicoLog.FabricaLog;
 import collection.Funcionarios;
 import collection.ICollection;
 import collection.Logs;
@@ -40,7 +40,6 @@ public class PrincipalPresenter implements Observador {
     private static PrincipalPresenter INSTANCE = null;
     private IFabricaAbstrata fabrica;
     private IFuncionarioDAO dao;
-    private IFabricaAbstrata fabricaLog;
     private ILog log;
 
     private PrincipalPresenter() {

@@ -1,4 +1,4 @@
-package factoryMethodDinamico;
+package factorymethoddinamico;
 
 import configuracao.Configuracao;
 import dao.IFabricaAbstrata;

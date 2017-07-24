@@ -2,7 +2,7 @@ package apoio;
 
 import dao.IFabricaAbstrata;
 import dao.IFuncionarioDAO;
-import factoryMethodDinamico.FabricaDAO;
+import factorymethoddinamico.FabricaDAO;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.AbstractFuncionario;
