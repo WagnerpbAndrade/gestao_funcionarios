@@ -1,1 +1,2 @@
+Teste,(22)2222-2222,100.0,1075.0,Gerente,Caribe,0,10,[Generoso, Assiduidade, Dependentes]
 Wagner Andrade,(11)1111-1111,100.0,1307.0,Gerente,Síria,0,2,[Generoso, Assiduidade, Localidade, Dependentes]

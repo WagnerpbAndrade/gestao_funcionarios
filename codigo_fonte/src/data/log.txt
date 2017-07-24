@@ -28,3 +28,4 @@ Visualização: ,Testando  foi visualizado! ,13/07/2017 01:25:42
 Edição: ,O funcionário: Testando foi editado para: Testando ,(11)1111-1111,10.0,207.2,Gerente,Síria,1,1,[Generoso, Assiduidade, Localidade, Dependentes],13/07/2017 01:26:01
 Insersão: ,Wagner Andrade foi cadastrado!,24/07/2017 12:40:02
 Visualização: ,Wagner Andrade foi visualizado! ,24/07/2017 13:00:55
+Insersão: ,Teste foi cadastrado!,24/07/2017 13:59:34

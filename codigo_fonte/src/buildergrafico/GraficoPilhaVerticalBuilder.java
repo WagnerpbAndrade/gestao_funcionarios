@@ -13,12 +13,12 @@ import org.jfree.data.category.DefaultCategoryDataset;
  *
  * @author wagner
  */
-public class GraficoVerticalBuilder extends GraficoBuilder {
+public class GraficoPilhaVerticalBuilder extends GraficoBuilder {
 
     private DefaultCategoryDataset dataset;
     private SalarioPorRegiao salario;
 
-    public GraficoVerticalBuilder() {
+    public GraficoPilhaVerticalBuilder() {
         this.dataset = new DefaultCategoryDataset();
         this.salario = SalarioPorRegiao.getInstance();
     }
@@ -33,7 +33,7 @@ public class GraficoVerticalBuilder extends GraficoBuilder {
             dataset.addValue(this.salario.getSalario("Síria"), "Síria", "País");
 
         } catch (Exception ex) {
-            Logger.getLogger(GraficoHorizontalBuilder.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GraficoBarraHorizontalBuilder.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return this.dataset;
@@ -41,12 +41,12 @@ public class GraficoVerticalBuilder extends GraficoBuilder {
 
     @Override
     public void setGrafico() {
-        this.grafico = ChartFactory.createBarChart3D(this.titulo, "", "", createDataset(), PlotOrientation.VERTICAL, this.legenda, this.tooltips, this.urls);
+        this.grafico = ChartFactory.createStackedBarChart3D(this.titulo, "", "", createDataset(), PlotOrientation.VERTICAL, this.legenda, this.tooltips, this.urls);
     }
 
     @Override
     public void criaChartPanel() {
-        this.chartPanel = new ChartPanel(this.grafico, true);
+        this.chartPanel = new ChartPanel(this.grafico);
     }
 
 }

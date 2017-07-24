@@ -13,6 +13,10 @@ public class PrincipalView extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JMenuItem getjMenuItemGraficoPilha() {
+        return jMenuItemGraficoLinha;
+    }
+    
     public JMenuItem getjMenuItemSistemaA() {
         return jMenuItemSistemaA;
     }
@@ -62,6 +66,7 @@ public class PrincipalView extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
         jMenuItemGraficoBarras = new javax.swing.JMenuItem();
         jMenuItemGraficoVertical = new javax.swing.JMenuItem();
+        jMenuItemGraficoLinha = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItemSistemaA = new javax.swing.JMenuItem();
         jMenuItemSistemaB = new javax.swing.JMenuItem();
@@ -123,13 +128,17 @@ public class PrincipalView extends javax.swing.JFrame {
         jMenu5.setPreferredSize(new java.awt.Dimension(170, 60));
 
         jMenuItemGraficoBarras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/horizontal_24x24.png"))); // NOI18N
-        jMenuItemGraficoBarras.setText("Gráfico Horizontal");
+        jMenuItemGraficoBarras.setText("Gráfico Barra  Horizontal");
         jMenuItemGraficoBarras.setPreferredSize(new java.awt.Dimension(240, 30));
         jMenu5.add(jMenuItemGraficoBarras);
 
         jMenuItemGraficoVertical.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/barra_24x24.png"))); // NOI18N
-        jMenuItemGraficoVertical.setText("Gráfico Vertical");
+        jMenuItemGraficoVertical.setText("Gráfico Barra  Vertical");
         jMenu5.add(jMenuItemGraficoVertical);
+
+        jMenuItemGraficoLinha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pilha_24x24.png"))); // NOI18N
+        jMenuItemGraficoLinha.setText("Gráfico Pilha Horizontal");
+        jMenu5.add(jMenuItemGraficoLinha);
 
         jMenuBar1.add(jMenu5);
 
@@ -203,6 +212,7 @@ public class PrincipalView extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItemAdicionarFuncionario;
     private javax.swing.JMenuItem jMenuItemGraficoBarras;
+    private javax.swing.JMenuItem jMenuItemGraficoLinha;
     private javax.swing.JMenuItem jMenuItemGraficoVertical;
     private javax.swing.JMenuItem jMenuItemListarFuncionario;
     private javax.swing.JMenuItem jMenuItemSair;

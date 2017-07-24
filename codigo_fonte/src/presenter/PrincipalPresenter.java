@@ -167,6 +167,10 @@ public class PrincipalPresenter implements Observador {
         this.view.getjMenuItemGraficoVertical().addActionListener((e) -> {
             miGraficoVertical();
         });
+        
+        this.view.getjMenuItemGraficoPilha().addActionListener((e) -> {
+            miGraficoLinha();
+        });
 
         update();
 
@@ -176,6 +180,10 @@ public class PrincipalPresenter implements Observador {
         //this.view.setResizable(false);
         this.view.setLocationRelativeTo(null);
         this.view.setVisible(true);
+    }
+    
+    private void miGraficoLinha(){
+        this.view.getjDesktopPanePrincipalView().add(new GraficoPilhaVerticalPresenter().getView());
     }
 
     private void miSistemaB() throws Exception {

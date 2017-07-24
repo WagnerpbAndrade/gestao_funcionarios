@@ -1,6 +1,7 @@
 package presenter;
 
 import buildergrafico.Diretor;
+import buildergrafico.GraficoPilhaVerticalBuilder;
 import buildergrafico.GraficoBarraVerticalBuilder;
 import collection.Funcionarios;
 import view.GraficoView;
@@ -14,13 +15,13 @@ import org.jfree.chart.ChartPanel;
  *
  * @author Wagner
  */
-public class GraficoVerticalPresenter implements Observador {
+public class GraficoPilhaVerticalPresenter implements Observador {
 
     private GraficoView view;
     private JPanel panel;
     private Funcionarios funcionarios;
 
-    public GraficoVerticalPresenter() {
+    public GraficoPilhaVerticalPresenter() {
 
         configuraTela();
 
@@ -58,7 +59,7 @@ public class GraficoVerticalPresenter implements Observador {
 
     private void criarGrafico() {
 
-        Diretor diretor = new Diretor(new GraficoBarraVerticalBuilder());
+        Diretor diretor = new Diretor(new GraficoPilhaVerticalBuilder());
         diretor.build();
         ChartPanel myChartPanel = diretor.getChartPanel();
 

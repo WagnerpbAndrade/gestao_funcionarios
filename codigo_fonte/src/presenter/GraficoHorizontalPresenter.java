@@ -1,7 +1,7 @@
 package presenter;
 
 import buildergrafico.Diretor;
-import buildergrafico.GraficoHorizontalBuilder;
+import buildergrafico.GraficoBarraHorizontalBuilder;
 import collection.Funcionarios;
 import view.GraficoView;
 import java.awt.BorderLayout;
@@ -58,7 +58,7 @@ public class GraficoHorizontalPresenter implements Observador {
 
     private void criarGrafico() {
 
-        Diretor diretor = new Diretor(new GraficoHorizontalBuilder());
+        Diretor diretor = new Diretor(new GraficoBarraHorizontalBuilder());
         diretor.build();
         ChartPanel myChartPanel = diretor.getChartPanel();
 
