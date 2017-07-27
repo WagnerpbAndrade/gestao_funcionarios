@@ -41,7 +41,7 @@ public final class FabricaLog {
     }
 
     private void carregaDAO() throws FileNotFoundException, IOException{
-        this.modeloDAO.load(new FileInputStream("src/factoryMethodDinamicoLog/commands.properties"));
+        this.modeloDAO.load(new FileInputStream("src/factorymethoddinamicoLog/commands.properties"));
     }
    
     public ILog create() throws Exception {

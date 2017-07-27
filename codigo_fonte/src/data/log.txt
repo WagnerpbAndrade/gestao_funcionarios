@@ -69,3 +69,4 @@ Insersão: ,caribe foi cadastrado!,24/07/2017 16:47:33
 Visualização: ,wagner foi visualizado! ,24/07/2017 16:48:04
 Visualização: ,caribe foi visualizado! ,24/07/2017 16:48:15
 Edição: ,O funcionário: caribefoi editado para: caribe,(11)1111-1111,100.0,1550.0,Gerente,Caribe,0,15,[Normal, Assiduidade, Dependentes],24/07/2017 16:48:28
+Insersão: ,oi foi cadastrado!,26/07/2017 21:28:23
