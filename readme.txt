@@ -15,7 +15,9 @@ Padrões de desenvolvimento utilizados no projeto:
 5. Observer
 6. Iterator
 7. Memento
-8. Chain
+8. Chain of Responsibility
+9. Abstract Factory
+10. Factory Method
 
 
 Padrão estrutural utilizado: MVP (Model View Presenter).
